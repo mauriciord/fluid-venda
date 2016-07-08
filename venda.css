@@ -1,0 +1,665 @@
+﻿body {
+	background: #ffffff;
+	color: #000000;
+	margin: 0 auto;
+	text-align: center;
+	border: 0;
+	padding: 0;
+}
+
+.col-t-1 { width: 54px; padding: 0 3px; text-align: left;} /* 60 px */
+.col-t-2 { width: 114px; padding: 0 3px; text-align: left;} /* 120 px */
+.col-t-3 { width: 174px; padding: 0 3px; text-align: left;} /* 180 px */
+.col-t-4 { width: 234px; padding: 0 3px; text-align: left;} /* 240 px */
+.col-t-5 { width: 294px; padding: 0 3px; text-align: left;} /* 300 px */
+.col-t-6 { width: 354px; padding: 0 3px; text-align: left;} /* 360 px */
+.col-t-7 { width: 414px; padding: 0 3px; text-align: left;} /* 420 px */
+.col-t-8 { width: 474px; padding: 0 3px; text-align: left;} /* 480 px */
+.col-t-9 { width: 534px; padding: 0 3px; text-align: left;} /* 540 px */
+.col-t-10 { width: 594px; padding: 0 3px; text-align: left;} /* 600 px */
+.col-t-11 { width: 654px; padding: 0 3px; text-align: left;} /* 660 px */
+.col-t-12 { width: 714px; padding: 0 3px; text-align: left;} /* 720 px */
+.col-t-13 { width: 774px; padding: 0 3px; text-align: left;} /* 780 px */
+.col-t-14 { width: 834px; padding: 0 3px; text-align: left;} /* 840 px */
+.col-t-15 { width: 894px; padding: 0 3px; text-align: left;} /* 900 px */
+.col-t-16 { width: 954px; padding: 0 3px; text-align: left;} /* 960 px */
+
+.col-t-1 > label, .col-t-2 > label, .col-t-3 > label, .col-t-4 > label, 
+.col-t-5 > label, .col-t-6 > label, .col-t-7 > label, .col-t-8 > label,
+.col-t-9 > label, .col-t-10 > label, .col-t-11 > label, .col-t-12 > label,
+.col-t-13 > label, .col-t-14 > label, .col-t-15 > label, .col-t-16 > label {
+	font-size: 10pt; 
+	font-family: 'Times New Roman', 'sans-serif'; 
+	text-transform: uppercase;
+	display: block;
+	margin-top: 5px;
+	vertical-align: bottom;
+	color: #000;
+}
+
+.col-t-1 > span, .col-t-2 > span, .col-t-3 > span, .col-t-4 > span, 
+.col-t-5 > span, .col-t-6 > span, .col-t-7 > span, .col-t-8 > span,
+.col-t-9 > span, .col-t-10 > span, .col-t-11 > span, .col-t-12 > span,
+.col-t-13 > span, .col-t-14 > span, .col-t-15 > span, .col-t-16 > span  {
+	color: #000; 
+	font-size: 10pt; 
+	font-family: 'Times New Roman', 'sans-serif'; 
+	text-transform: uppercase;
+	display: inline-block;
+	margin-top: 5px;
+}
+
+.col-t-1 > p, .col-t-2 > p, .col-t-3 > p, .col-t-4 > p, 
+.col-t-5 > p, .col-t-6 > p, .col-t-7 > p, .col-t-8 > p,
+.col-t-9 > p, .col-t-10 > p, .col-t-11 > p, .col-t-12 > p,
+.col-t-13 > p, .col-t-14 > p, .col-t-15 > p, .col-t-16 > p  {
+	color: #000; font-size: 10pt; font-family: 'Times New Roman', 'sans-serif'; text-transform: uppercase;
+}
+
+.col-t-1 > input, .col-t-2 > input, .col-t-3 > input, .col-t-4 > input, 
+.col-t-5 > input, .col-t-6 > input, .col-t-7 > input, .col-t-8 > input,
+.col-t-9 > input, .col-t-10 > input, .col-t-11 > input, .col-t-12 > input,
+.col-t-13 > input, .col-t-14 > input, .col-t-15 > input, .col-t-16 > input,
+.col-t-1 > textarea, .col-t-2 > textarea, .col-t-3 > textarea, .col-t-4 > textarea, 
+.col-t-5 > textarea, .col-t-6 > textarea, .col-t-7 > textarea, .col-t-8 > textarea,
+.col-t-9 > textarea, .col-t-10 > textarea, .col-t-11 > textarea, .col-t-12 > textarea,
+.col-t-13 > textarea, .col-t-14 > textarea, .col-t-15 > textarea, .col-t-16 > textarea,
+.col-t-1 > select, .col-t-2 > select, .col-t-3 > select, .col-t-4 > select, 
+.col-t-5 > select, .col-t-6 > select, .col-t-7 > select, .col-t-8 > select,
+.col-t-9 > select, .col-t-10 > select, .col-t-11 > select, .col-t-12 > select,
+.col-t-13 > select, .col-t-14 > select, .col-t-15 > select, .col-t-16 > select,
+table#tabelaCheque tr td input, table#tabelaOutros tr td input, table#tabelaBoleto tr td input, .campoIndiceOutros input {
+	width: 100%;
+	box-sizing: border-box;
+	display: block;
+	background: #ffffff;
+	font-size: 10pt; 
+	font-family: 'Times New Roman', 'sans-serif'; 
+	text-transform: uppercase;
+	padding-top: 4px;
+}
+
+table#tabelaCheque tr td, table#tabelaOutros tr td, table#tabelaBoleto tr td {
+	text-align: center;
+}
+
+table#tabelaCheque tr td input, table#tabelaOutros tr td input, table#tabelaBoleto tr td input, 
+table#tabelaCheque tr td span, table#tabelaOutros tr td span, table#tabelaBoleto tr td span {
+	text-align: center;
+}
+
+#quantidadeParcelas:before {
+	content: "(";
+}
+#quantidadeParcelas:after {
+	content: ")";
+}
+
+.topo{ width:800px; padding:10px 0 20px 0; background: #ffffff; margin: 0 auto; }
+.topo .logo-area-2{ width: 245px; padding:12px 5px 0 10px; float:left; }
+.topo .end-area-2{ width: 540px; padding:8px 0 0 0; float: left; text-align: center; }
+.topo .end-area-2 p{ font-size: 9px; line-height: 5px; }
+
+#cabecalho, #rodape, #conteudo {
+	margin: 0 auto;
+	width: 980px;
+	padding: 0 0 10px 0;
+	background: #ffffff;
+}
+
+#cabecalho .bloco_logo { width:335px; padding:12px 5px 0 10px; }
+#cabecalho .bloco_endereco { width:630px; padding:8px 0 0 0; text-align: center; }
+/*#cabecalho .bloco_endereco:after { content:''; display:block; clear: both; } */
+#cabecalho .bloco_endereco p { font-size: 9px; line-height: 5px; }
+#cabecalho .bloco_logo, #cabecalho .bloco_endereco { float: left;  }
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#quantidadeParcelas:before {
+	content: "(";
+}
+#quantidadeParcelas:after {
+	content: ")";
+}
+
+a, a:active, a:hover { color:#666869; }
+
+#corpo{ width:960px; padding-right:10px; padding-left:10px; background: #ffffff; margin:0 auto; }
+.tabelaFormulario{ width: 960px; }
+.tabelaFormulario .barra-titulo td { 
+	font-size:12px; 
+	font-family: Arial, sans-serif; 
+	color: #ffffff; 
+	text-transform: uppercase;
+	padding: 5px;
+	background: #000000;
+	color: #ffffff; 
+}
+.tc-ret-botoes{ background-image: linear-gradient(#cccccc, #ffffff, #cccccc); padding:3px; font-size:11px; }
+.tc-ret-botoes input[type="button"]{ background-image: radial-gradient(#ffffff, #cccccc); padding:3px; border:1px solid #c9c0c1; font-size: 11px;}
+.tc-ret-botoes input[type="button"]:disabled{ color:#cdcdd1; background-image: radial-gradient(#ababab, #cccccc); padding:3px; border:1px solid #c0c1c2; font-size: 11px;}
+.centraliza_form{ width: 980px; padding: 5px; /*border: 1px solid #000000;*/ background: #ffffff; margin:10px auto;}
+
+/*.tabelaFormulario tr td { padding: 1px; }*/
+.tabelaFormulario tr td.col-label-1{ vertical-align: bottom; text-align: left;}
+
+/* ajustes */
+.text-left {text-align: left !important;} .text-right{text-align: right !important;} .text-center{text-align: center !important;}
+.left {float: left;} .right {float: right;}
+.center-block { margin-left: auto; margin-right: auto;}
+.text-upper { text-transform: uppercase;  }
+
+.row-prop {
+	border-bottom: 1px solid #000;
+	padding: 6px 0;
+}
+
+.tc-label{
+  	display: table-cell;
+  	vertical-align: bottom;
+}
+.barra-do-titulo {
+	background: #fff;
+	border-top: 3px solid #000;
+	border-bottom: 3px solid #000;
+}
+
+.barra-do-titulo > .col-t-1 > label, .barra-do-titulo > .col-t-2 > label, .barra-do-titulo > .col-t-3 > label, .barra-do-titulo > .col-t-4 > label, 
+.barra-do-titulo > .col-t-5 > label, .barra-do-titulo > .col-t-6 > label, .barra-do-titulo > .col-t-7 > label, .barra-do-titulo > .col-t-8 > label,
+.barra-do-titulo > .col-t-9 > label, .barra-do-titulo > .col-t-10 > label, .barra-do-titulo > .col-t-11 > label, .barra-do-titulo > .col-t-12 > label,
+.barra-do-titulo > .col-t-13 > label, .barra-do-titulo > .col-t-14 > label, .barra-do-titulo > .col-t-15 > label, .barra-do-titulo > .col-t-16 > label {
+	font-size: 10pt; 
+	font-family: 'Times New Roman', 'sans-serif'; 
+	text-transform: uppercase;
+	display: block;
+	margin-top: 3px;
+	vertical-align: bottom;
+	color: #000000;
+	font-weight: bold;
+}
+
+.barra-do-titulo > .col-t-1 > span, .barra-do-titulo > .col-t-2 > span, .barra-do-titulo > .col-t-3 > span, .barra-do-titulo > .col-t-4 > span, 
+.barra-do-titulo > .col-t-5 > span, .barra-do-titulo > .col-t-6 > span, .barra-do-titulo > .col-t-7 > span, .barra-do-titulo > .col-t-8 > span,
+.barra-do-titulo > .col-t-9 > span, .barra-do-titulo > .col-t-10 > span, .barra-do-titulo > .col-t-11 > span, .barra-do-titulo > .col-t-12 > span,
+.barra-do-titulo > .col-t-13 > span, .barra-do-titulo > .col-t-14 > span, .barra-do-titulo > .col-t-15 > span, .barra-do-titulo > .col-t-16 > span  {
+	color: #000000; 
+	font-size: 10pt; 
+	font-family: 'Times New Roman', 'sans-serif'; 
+	text-transform: uppercase;
+	display: inline-block;
+	margin-top: 3px;
+	font-weight: bold;
+}
+
+.barra-do-titulo > .col-t-1 > p, .barra-do-titulo > .col-t-2 > p, .barra-do-titulo > .col-t-3 > p, .barra-do-titulo > .col-t-4 > p, 
+.barra-do-titulo > .col-t-5 > p, .barra-do-titulo > .col-t-6 > p, .barra-do-titulo > .col-t-7 > p, .barra-do-titulo > .col-t-8 > p,
+.barra-do-titulo > .col-t-9 > p, .barra-do-titulo > .col-t-10 > p, .barra-do-titulo > .col-t-11 > p, .barra-do-titulo > .col-t-12 > p,
+.barra-do-titulo > .col-t-13 > p, .barra-do-titulo > .col-t-14 > p, .barra-do-titulo > .col-t-15 > p, .barra-do-titulo > .col-t-16 > p  {
+	color: #000000; font-size: 10pt; font-family: 'Times New Roman', 'sans-serif'; text-transform: uppercase; font-weight: bold;
+}
+
+.barra-do-titulo > .barra-do-titulo > .col-t-1 > input, .barra-do-titulo > .col-t-2 > input, .barra-do-titulo > .col-t-3 > input, .barra-do-titulo > .col-t-4 > input, 
+.barra-do-titulo > .col-t-5 > input, .barra-do-titulo > .col-t-6 > input, .barra-do-titulo > .col-t-7 > input, .barra-do-titulo > .col-t-8 > input,
+.barra-do-titulo > .col-t-9 > input, .barra-do-titulo > .col-t-10 > input, .barra-do-titulo > .col-t-11 > input, .barra-do-titulo > .col-t-12 > input,
+.barra-do-titulo > .col-t-13 > input, .barra-do-titulo > .col-t-14 > input, .barra-do-titulo > .col-t-15 > input, .barra-do-titulo > .col-t-16 > input,
+.barra-do-titulo > .col-t-1 > textarea, .barra-do-titulo > .col-t-2 > textarea, .barra-do-titulo > .col-t-3 > textarea, .barra-do-titulo > .col-t-4 > textarea, 
+.barra-do-titulo > .col-t-5 > textarea, .barra-do-titulo > .col-t-6 > textarea, .barra-do-titulo > .col-t-7 > textarea, .barra-do-titulo > .col-t-8 > textarea,
+.barra-do-titulo > .col-t-9 > textarea, .barra-do-titulo > .col-t-10 > textarea, .barra-do-titulo > .col-t-11 > textarea, .barra-do-titulo > .col-t-12 > textarea,
+.barra-do-titulo > .col-t-13 > textarea, .barra-do-titulo > .col-t-14 > textarea, .barra-do-titulo > .col-t-15 > textarea, .barra-do-titulo > .col-t-16 > textarea,
+.barra-do-titulo > .col-t-1 > select, .barra-do-titulo > .col-t-2 > select, .barra-do-titulo > .col-t-3 > select, .barra-do-titulo > .col-t-4 > select, 
+.barra-do-titulo > .col-t-5 > select, .barra-do-titulo > .col-t-6 > select, .barra-do-titulo > .col-t-7 > select, .barra-do-titulo > .col-t-8 > select,
+.barra-do-titulo > .col-t-9 > select, .barra-do-titulo > .col-t-10 > select, .barra-do-titulo > .col-t-11 > select, .barra-do-titulo > .col-t-12 > select,
+.barra-do-titulo > .col-t-13 > select, .barra-do-titulo > .col-t-14 > select, .barra-do-titulo > .col-t-15 > select, .barra-do-titulo > .col-t-16 > select {
+	width: 100%;
+	box-sizing: border-box;
+	display: block;
+	background: #ffffff;
+	font-size: 10pt; 
+	font-family: 'Times New Roman', 'sans-serif'; 
+	text-transform: uppercase;
+	color: #000;
+}
+
+
+table#tabelaCheque, table#tabelaOutros, table#tabelaBoleto {
+	border: 1px solid #000000;
+	border-spacing: 2px;
+    border-collapse: separate;
+}
+
+table#tabelaCheque tr.tit-tabelaProposta, table#tabelaOutros tr.tit-tabelaProposta, table#tabelaBoleto tr.tit-tabelaProposta {
+	background: #000000;
+}
+
+table#tabelaCheque tr.tit-tabelaProposta td, table#tabelaOutros tr.tit-tabelaProposta td, table#tabelaBoleto tr.tit-tabelaProposta td  {
+	font-size: 9px;
+	font-weight: bold;
+	font-family: 'Times New Roman', 'sans-serif';
+	text-align: center;
+	color: #ffffff;
+}
+
+.texto-igual {
+	font-size: 9pt; 
+	font-family: 'Times New Roman', 'sans-serif'; 
+}
+
+.bloco-de-assinar { width: 270px; }
+.bloco-de-assinar > .linha-do-nome { border-bottom: 1px solid #000; min-height: 50px;}
+.bloco-de-assinar > .categoria-vendedor{ 
+	text-align: center; 
+	text-transform: uppercase; 
+	font-size: 10pt; 
+	font-family: 'Times New Roman', 'sans-serif'; 
+	font-weight: bold;
+	padding-top: 5px;
+}
+.bloco-de-assinar > .corretor-responsavel {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 9pt;
+	font-family: 'Times New Roman', 'sans-serif';
+	padding-top: 3px;
+}
+.bloco-de-assinar > .corretor-responsavel:before { content: "( " }
+.bloco-de-assinar > .corretor-responsavel:after { content: " )" }
+
+.bloco-testemunhas { margin-bottom: 60px; }
+.bloco-de-test { width: 330px; }
+.bloco-de-test > .linha-do-nome { border-bottom: 1px solid #000; min-height: 50px; }
+.bloco-de-test > .dados-da-test { 
+	text-align: left;
+	text-transform: uppercase;
+	font-size: 10pt;
+	font-family: 'Times New Roman', 'sans-serif';
+	padding-top: 5px;
+}
+
+.bloco-condicoesGerais { width: 960px; }
+.bloco-condicoesGerais .tit-condicoesGerais { 
+	background: #ffffff; 
+	color: #000000; 
+	font-family: 'Arial', 'sans-serif'; 
+	font-size: 12pt; 
+	font-weight: bold; 
+	text-align: center; 
+	text-transform: uppercase;
+	padding: 5px;
+	border: 4px double #000000;
+}
+
+.lista-condGerais li { 
+	text-align: justify;
+	font-size: 13pt;
+	font-family: 'Arial', 'sans-serif';
+	margin-top: 11px;
+	margin-bottom: 8px;
+}
+
+.tipo-pagamentoSinal select{
+	margin-top: 10px;
+}
+
+
+.text-valorExtenso {
+	/* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+.text-valorExtenso:before {
+	content: "( "
+}
+.text-valorExtenso:after {
+	content: " )"
+}
+
+.botao-area {
+	padding-top:10px;
+	padding-bottom: 10px;
+}
+.botao-acao {
+   border-top: 1px solid #0e9df5;
+   background: #0e6199;
+   background: -webkit-gradient(linear, left top, left bottom, from(#0b71b5), to(#0e6199));
+   background: -webkit-linear-gradient(top, #0b71b5, #0e6199);
+   background: -moz-linear-gradient(top, #0b71b5, #0e6199);
+   background: -ms-linear-gradient(top, #0b71b5, #0e6199);
+   background: -o-linear-gradient(top, #0b71b5, #0e6199);
+   padding: 6px 12px;
+   -webkit-border-radius: 7px;
+   -moz-border-radius: 7px;
+   border-radius: 7px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 15px;
+   text-decoration: none;
+   vertical-align: middle;
+}
+.botao-acao:hover {
+   border-top-color: #114d75;
+   background: #114d75;
+   color: #ccc;
+}
+.botao-acao:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+}
+
+input[readonly], input[readonly="readonly"] {
+	background: #cccccc;
+}
+
+.tipo-pagamentoSinal span {
+	padding-top: 8px;
+}
+
+.junta-valor-extenso { }
+.junta-valor-extenso:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.junta-valor-extenso .junta-valor { 
+	float:left; 
+	display: inline;
+}
+
+.junta-valor-extenso .junta-valor input {
+	max-width: 150px; 
+	vertical-align: middle; 
+	background: #ffffff;
+	font-family: 'Times New Roman', 'sans-serif'; 
+	text-transform: uppercase;
+	color: #000;
+	font-size: 10pt; 
+	margin-top: 2px;
+}	
+.junta-valor-extenso .junta-valor span, .junta-valor-extenso .junta-valor label { 
+	vertical-align: middle; 
+	color: #000000; 
+	font-size: 10pt; 
+	font-family: 'Times New Roman', 'sans-serif'; 
+	text-transform: uppercase;
+	/*display: inline-block;*/
+	margin-top: 3px;
+}
+
+.junta-valor-extenso .junta-extenso { 
+	float:left;
+	display: inline;
+}
+.junta-valor-extenso .junta-extenso span, .junta-valor-extenso .junta-extenso label { 
+	vertical-align: middle; 
+	padding-left: 5px;
+	color: #000000; 
+	font-size: 10pt; 
+	font-family: 'Times New Roman', 'sans-serif'; 
+	text-transform: uppercase;
+	/*display: inline-block;*/
+	margin-top: 3px;
+}
+
+.qtdeParcelas-area {
+	padding-right: 4px;
+}
+
+
+
+/* ==== ABAIXO É VELHO ===== ===== ===== ===== 
+===== ===== ==== <======> ====== <===> <========> =======
+=============================================*/
+
+table tr td {
+	border-bottom: 1px solid #000;
+	text-transform: uppercase;
+}
+
+.img-responsive{max-width: 100%; height: auto;}
+
+.page-break{
+	display:none !important;
+} 
+
+.campoLabel{
+	font-variant:small-caps;
+	font-family:Times New Roman;
+	font-size: 14px;
+}
+
+.campo50px{
+	text-align: center;
+	width:50px;
+}
+
+.campo100px{
+	text-align: center;
+	width:100px;
+}
+
+.campo150px{
+	text-align: left;
+	width:150px;
+}
+
+.campo250px{
+	text-align: left;
+	width:250px;
+}
+
+.campo358px{
+	text-align: left;
+	width:358px;
+}
+
+.campo500px{
+	text-align: left;
+	width:500px;
+}
+
+#topo{
+	width:800px;
+	height:120px;
+}
+.borda-form{
+	border:2px solid #727376;
+}
+
+.end-260 p{
+	font-size: 12px;
+	font-family: Arial, sans-serif;
+}
+.end-180 p{
+	font-size: 10px;
+	font-family: Arial, sans-serif;
+}
+.limpar{
+	clear: both;
+}
+
+#logotipo
+{
+    text-align:center;
+	width:250px;
+	height:120px;
+    padding-top:15px;
+}
+
+#titulo 
+{
+	width:547px;
+	height:120px;
+	text-align:right;
+	float:right;	
+}
+
+
+
+#colunaEsquerdaLabel{
+	text-align: left;
+	width: 120px; 
+}
+
+#colunaEsquerdaCampo{
+	text-align: left;
+}
+
+#colunaCentroLabel3Campos{
+	text-align: right;
+	width: 150px;
+}
+
+#colunaCentroLabel4Campos{
+	text-align: right;
+	width: 70px;
+}
+
+#colunaCentroCampo{
+	text-align: left;
+}
+
+#colunaDireitaLabel{
+	text-align: right;
+}
+
+#rodape{
+	text-align: center;
+}
+
+.lista-cond-gerais li{
+	text-align:justify;
+	margin:10px 0;
+	/*font-family: Arial, sans-serif;*/
+	font-size:13px;
+}
+
+.tc-div-proponente{
+	border-top:1px solid #474747;
+	margin-top:5px;
+	-webkit-print-color-adjust:exact;
+}
+
+.tc-area-reajuste { padding:10px 0; }
+.tc-area-reajuste .campoLabel { float:left; }
+.tc-area-reajuste .limpar { clear:both; }
+.tc-reajuste label { display: block; }
+.margin-l-reajuste{ margin-left:10px; }
+
+
+@media screen {         
+   .nao_imprimir { display: inline; }
+   .bloco-declaracaoExpressa { 
+			display: none;
+   }
+   .just-print {
+   	display: none;
+   }
+}      
+
+@media print {
+
+	.row-prop {
+		padding: 2px 0;
+	}
+
+	/* * {color: #000000 !important;} */
+	/*html, body {
+		margin:0;
+		padding:0;
+		height:100%;
+	}
+
+	.wrapper {
+		min-height:100%;
+		position:relative;
+	}
+
+	.bloco-primeiraPagina {
+		padding-bottom: 80px;
+	}*/
+	
+	@page  {
+		margin: 0.5cm auto;
+	} 
+
+	.just-print {
+   	display: block;
+   }
+
+	.not-print { display: none; }
+
+	.bloco-declaracaoExpressa {
+		/*position: relative;
+		clear: both;
+    z-index: 10;
+    height: 3em;
+    margin-top: -3em;*/
+    margin-top:30px;
+		background: #ffffff;
+		display: block;
+		padding: 4px;
+		border: 2px solid #000;
+	}
+	.bloco-declaracaoExpressa p {
+		font-size: 8pt;
+		font-family: 'Arial', 'sans-serif';
+		color: #000000;
+		text-transform: uppercase;
+		text-align: center;
+		font-weight: bold;
+	}
+	
+  .nao_imprimir { display: none; }
+	
+	#corpo, .topo{ background: #FFFFFF !important; }
+	
+	.page-break	{ 
+		display:block !important;
+		page-break-before: always !important;
+	}
+	
+	.tc-div-proponente{
+		border-top:1px solid #474747;
+		padding-top:5px;
+		-webkit-print-color-adjust:exact;
+		background-color:#ffffff ;
+		border-bottom-color: transparent ;
+		border-left-color: transparent ;
+		border-right-color: transparent ;	
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+		color:#000 ;
+	}
+	
+	input, textarea, select {
+		border: none;
+	}
+	
+	.barra-cinza{
+		background: #727376 !important;
+	}
+	
+	.texto-branco-imp, .texto-branco-imp b{
+		color: #ffffff !important;
+	}
+	
+}

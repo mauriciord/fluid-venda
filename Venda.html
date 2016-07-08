@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Proposta de Compra</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<meta http-equiv="Cache-Control" content="no-store" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+
+    <link rel="stylesheet" type="text/css" href="http://thcm.com.br/cdn-ecm/scripts/pf/v.1.0/normalize.css" media="screen, print" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="http://thcm.com.br/cdn-ecm/scripts/pf/v.1.0/venda.css" media="screen, print" />
+</head>
+<body>
+    <form class="centraliza_form" method="post" action="" id="nvi_pf">
+		<div class="wrapper">
+
+			<div class="bloco-primeiraPagina">
+
+			<div id="camposOcultos">
+			    <input type="hidden" value="" id="exe1Exp"  	name="exe1Exp">
+			    <input type="hidden" value="" id="exe2Exp"  	name="exe2Exp">
+			    <input type="hidden" value="" id="exeSinal" 	name="exeSinal">
+			    <input type="hidden" value="" id="executou1vez" name="executou1vez">
+			    <input type="hidden" value="" id="codigoImovel" name="codigoImovel">
+				<input type="hidden" value="" id="proponente" name="proponente" >
+		    </div>
+		    <div id="horas1Exp" style="padding-left:10px;">
+		    	<br>
+		    	Data:
+		    	<input class="campo100px" value="" id="qtdHoras1Exp" name="qtdHoras1Exp" onkeypress="return FormatarData(this, event);" maxlength="10">
+		    	<br>
+		    </div>
+		    <div id="horas2Exp" style="padding-left:10px;">
+		    	<br>
+		    	Data:
+		    	<input class="campo100px" value="" id="qtdHoras2Exp" name="qtdHoras2Exp" onkeypress="return FormatarData(this, event);" maxlength="10">
+		    	<br>
+		    </div>
+		    <div id="horasSinal" style="padding-left:10px;">
+		    	<br>
+		    	Data:
+		    	<input class="campo100px" value="" id="qtdHorasSinal" name="qtdHorasSinal" onkeypress="return FormatarData(this, event);" maxlength="10">
+		    	<br>
+		    </div>
+
+				<div id="cabecalho" class="group">
+					<div class="bloco_logo">
+						<img class="img-responsive" src="thcm_imoveis.jpg" />
+					</div>
+					<div class="bloco_endereco">
+						
+						<p>
+							<b>Americana-SP</b> - 
+							Rua Comandante César Albuquerque Almeida,Hangar 22 - 
+							CEP: 13479-302 - <b>Fone: (19) 3467-9600</b>
+						</p>
+					
+						<p>
+							<b>Sta. Rita do Passa Quatro-SP</b> - 
+							Rua Víctor Anníbal Rosim, 27 - Vila Bandeirantes - 
+							CEP: 13670-000 - <b>Fone: (19) 3582-9200</b>
+						</p>
+					
+					</div>
+				</div>
+
+		    <div id="corpo">
+
+				<div class="row-prop group barra-do-titulo">
+
+					<div class="col-t-9 left">
+						<label>PROPOSTA DE COMPRA COM RECIBO DE SINAL - <b>PESSOA FÍSICA</b><label>
+					</div>
+
+					<div class="col-t-1 left">
+						<label for="proposta" class="right">Nº:</label>
+					</div>
+
+					<div class="col-t-2 left">
+						<input value="0" id="proposta" name="proposta" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);" />
+					</div>
+
+					<div class="col-t-2 left">
+						<label for="data" class="right">Data:</label>
+					</div>
+
+					<div class="col-t-2 left">
+						<input value="" id="data" name="data" onkeypress="return FormatarData(this, event);" maxlength="10" onblur="ValidarCampo(this, event);">
+					</div>
+
+				</div>
+
+				<div class="tc-ret-botoes group not-print">
+					<div class="left">
+						<b>Ações:</b>
+						<input type="button" id="btn_adicionaProp" name="btn_adicionaProp" class="tc-btnAddProp" value="Novo proponente">
+						<input type="button" id="btn_deletaProp" name="btn_deletaProp" class="tc-btnCancelProp" value="Cancelar um proponente">
+					</div>
+				</div>
+
+				<div class="tc-div-proponente">
+					<div class="row-prop group">
+						
+						<div class="col-t-2 left">
+							<label>Nome:</label>
+						</div>
+						<div class="col-t-8 left">
+							<input value="" id="nome_1" name="nome_1" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-2 left">
+							<label>Nascimento:</label>
+						</div>
+						<div class="col-t-4 left">
+							<input value="" id="dataNascimento_1" name="dataNascimento_1" onkeypress="return FormatarData(this, event)" maxlength="10" onblur="ValidarCampo(this, event);">
+						</div>
+
+					</div>
+
+					<div class="row-prop group">
+						
+						<div class="col-t-2 left">
+							<label>Profissão:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="profissao_1" name="profissao_1" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-2 left">
+							<label>Nacionalidade:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="nacionalidade_1" name="nacionalidade_1" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-2 left">
+							<label>Naturalidade:</label>
+						</div>
+						<div class="col-t-4 left">
+							<input value="" id="naturalidade_1" name="naturalidade_1" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+
+					</div>
+
+					<div class="row-prop group">
+						<div class="col-t-2 left">
+							<label>E-mail:</label>
+						</div>
+						<div class="col-t-14 left">
+							<input value="" id="email_1" name="email_1" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+					</div>
+
+					<div class="row-prop group">
+						
+						<div class="col-t-2 tc-label left">
+							<label>CPF/MF:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="cpf_1" name="cpf_1"  onkeypress="return(FormatarCampo(this,'999.999.999-99', event))" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-1 left">
+							<label>RG:</label>
+						</div>
+						<div class="col-t-2 left">
+							<input value="" id="rg_1" name="rg_1" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-2 tc-label left">
+							<label>Orgão Emissor:</label>
+						</div>
+						<div class="col-t-2 left">
+							<input value="" id="orgaoEmissor_1" name="orgaoEmissor_1"  onkeypress="return(FormatarCampo(this,'XXX/XX', event));" onKeyup="this.value = this.value.toUpperCase();" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-2 tc-label left">
+							<label>Data Exped.:</label>
+						</div>
+						<div class="col-t-2 left">
+							<input value="" id="dataExpedicao_1" name="dataExpedicao_1" onkeypress="return FormatarData(this, event)" maxlength="10" onblur="ValidarCampo(this, event);">
+						</div>
+
+					</div>
+
+					<div class="row-prop group">
+						
+						<div class="col-t-2 tc-label left">
+							<label>Endereço:</label>
+						</div>
+						<div class="col-t-6 left">
+							<input value="" id="endereco_1" name="endereco_1" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-1 left">
+							<label>Bairro:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="bairro_1" name="bairro_1" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-1 tc-label left">
+							<label>CEP:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="cep_1" name="cep_1" onkeypress="return(FormatarCampo(this,'99999-999', event))" onblur="ValidarCampo(this, event);">
+						</div>
+
+					</div>
+
+					<div class="row-prop group">
+						
+						<div class="col-t-2 tc-label left">
+							<label>Cidade/UF:</label>
+						</div>
+						<div class="col-t-5 left">
+							<input value="" id="cidade_1" name="cidade_1" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-2 left">
+							<label>Fone Residenc.:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="foneResidencial_1" name="foneResidencial_1"  onkeypress="return(FormatarCampo(this,'(99) 9999999999', event))" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-4 tc-label left">
+							
+						</div>
+
+					</div>
+
+					<div class="row-prop group">
+						
+						<div class="col-t-2 tc-label left">
+							<label>End.comercial:</label>
+						</div>
+						<div class="col-t-6 left">
+							<input value="" id="enderecoComercial_1" name="enderecoComercial_1" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-1 left">
+							<label>Bairro:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="bairroComercial_1" name="bairroComercial_1" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-1 tc-label left">
+							<label>CEP:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="cepComercial_1" name="cepComercial_1"  onkeypress="return(FormatarCampo(this,'99999-999', event))" onblur="ValidarCampo(this, event);">
+						</div>
+
+					</div>
+
+					<div class="row-prop group">
+						
+						<div class="col-t-2 tc-label left">
+							<label>Cidade/UF:</label>
+						</div>
+						<div class="col-t-5 left">
+							<input value="" id="cidadeComercial_1" name="cidadeComercial_1" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-2 left">
+							<label>Fone Comerc.:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="foneComercial_1" name="foneComercial_1" onkeypress="return(FormatarCampo(this,'(99) 9999999999', event))" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-1 tc-label left">
+							<label>Cel.:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="celular_1" name="celular_1" onkeypress="return(FormatarCampo(this,'(99) 9999999999', event))" onblur="ValidarCampo(this, event);">
+						</div>
+
+					</div>
+
+					<div class="row-prop group">
+						
+						<div class="col-t-2 tc-label left">
+							<label>Estado Civil:</label>
+						</div>
+						<div class="col-t-3 left">
+							<select size="1" name="estadoCivil_1" id="estadoCivil_1" onkeypress="return handleEnter(this, event);">
+								<option selected value="solteiro">Solteiro</option>
+								<option value="casado">Casado</option>
+								<option value="divorciado">Divorciado</option>
+								<option value="separadoJudicialmente">Separado Judicialmente</option>
+								<option value="viuvo">Viúvo</option>
+								<option value="outros">Outros</option>
+							</select>
+						</div>
+						<div class="col-t-3 tc-label left">
+							<label>Regime de Casamento:</label>
+						</div>
+						<div class="col-t-4 left">
+							<input value="" id="regimeCasamento_1" name="regimeCasamento_1" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-1 tc-label left">
+							<label>Data:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="dataCasamento_1" name="dataCasamento_1" onkeypress="return FormatarData(this, event)" maxlength="10" onblur="ValidarCampo(this, event);">
+						</div>
+
+					</div>
+					
+					<div class="tc-div-conjuge_1">
+						<div class="row-prop group">
+							
+							<div class="col-t-2 tc-label left">
+								<label>Cônjuge:</label>
+							</div>
+							<div class="col-t-8 left">
+								<input value="" id="conjugue_1" name="conjugue_1" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+							</div>
+							<div class="col-t-2 tc-label left">
+								<label>Nascimento:</label>
+							</div>
+							<div class="col-t-4 left">
+								<input value="" id="dataNascimentoCojugue_1" name="dataNascimentoCojugue_1" onkeypress="return FormatarData(this, event)" maxlength="10" onblur="ValidarCampo(this, event);">
+							</div>
+
+						</div>
+
+						<div class="row-prop group">
+							
+							<div class="col-t-2 left">
+								<label>Profissão:</label>
+							</div>
+							<div class="col-t-3 left">
+								<input value="" id="profissaoCojugue_1" name="profissaoCojugue_1" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+							</div>
+							<div class="col-t-2 left">
+								<label>Nacionalidade:</label>
+							</div>
+							<div class="col-t-3 left">
+								<input value="" id="nacionalidadeCojugue_1" name="nacionalidadeCojugue_1" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+							</div>
+							<div class="col-t-2 left">
+								<label>Naturalidade:</label>
+							</div>
+							<div class="col-t-4 left">
+								<input value="" id="naturalidadeCojugue_1" name="naturalidadeCojugue_1" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+							</div>
+
+						</div>
+
+						<div class="row-prop group">
+							
+							<div class="col-t-2 tc-label left">
+								<label>CPF/MF:</label>
+							</div>
+							<div class="col-t-3 left">
+								<input value="" id="cpfCojugue_1" name="cpfCojugue_1" onkeypress="return(FormatarCampo(this,'999.999.999-99', event))" onblur="ValidarCampo(this, event);">
+							</div>
+							<div class="col-t-1 left">
+								<label>RG:</label>
+							</div>
+							<div class="col-t-2 left">
+								<input value="" id="rgCojugue_1" name="rgCojugue_1" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+							</div>
+							<div class="col-t-2 tc-label left">
+								<label>Orgão Emissor:</label>
+							</div>
+							<div class="col-t-2 left">
+								<input value="" id="orgaoEmissorCojugue_1" name="orgaoEmissorCojugue_1" onkeypress="return(FormatarCampo(this,'XXX/XX', event));" onKeyup="this.value = this.value.toUpperCase();" onblur="ValidarCampo(this, event);">
+							</div>
+							<div class="col-t-2 tc-label left">
+								<label>Data Exped.:</label>
+							</div>
+							<div class="col-t-2 left">
+								<input value="" id="dataExpedicaoCojugue_1" name="dataExpedicaoCojugue_1" onkeypress="return FormatarData(this, event)" maxlength="10" onblur="ValidarCampo(this, event);">
+							</div>
+
+						</div>
+					</div> <!-- fim da area do conjuge -->
+				</div><!-- fim do proponente 1 -->
+				  
+				<div class="tc-div-proponente">
+					<div class="row-prop group">
+						
+						<div class="col-t-2 left">
+							<label>Nome:</label>
+						</div>
+						<div class="col-t-8 left">
+							<input value="" id="nome_2" name="nome_2" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-2 left">
+							<label>Nascimento:</label>
+						</div>
+						<div class="col-t-4 left">
+							<input value="" id="dataNascimento_2" name="dataNascimento_2" onkeypress="return FormatarData(this, event)" maxlength="10" onblur="ValidarCampo(this, event);">
+						</div>
+
+					</div>
+
+					<div class="row-prop group">
+						
+						<div class="col-t-2 left">
+							<label>Profissão:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="profissao_2" name="profissao_2" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-2 left">
+							<label>Nacionalidade:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="nacionalidade_2" name="nacionalidade_2" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-2 left">
+							<label>Naturalidade:</label>
+						</div>
+						<div class="col-t-4 left">
+							<input value="" id="naturalidade_2" name="naturalidade_2" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+
+					</div>
+
+					<div class="row-prop group">
+						<div class="col-t-2 left">
+							<label>E-mail:</label>
+						</div>
+						<div class="col-t-14 left">
+							<input value="" id="email_2" name="email_2" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+					</div>
+
+					<div class="row-prop group">
+						
+						<div class="col-t-2 tc-label left">
+							<label>CPF/MF:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="cpf_2" name="cpf_2"  onkeypress="return(FormatarCampo(this,'999.999.999-99', event))" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-1 left">
+							<label>RG:</label>
+						</div>
+						<div class="col-t-2 left">
+							<input value="" id="rg_2" name="rg_2" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-2 tc-label left">
+							<label>Orgão Emissor:</label>
+						</div>
+						<div class="col-t-2 left">
+							<input value="" id="orgaoEmissor_2" name="orgaoEmissor_2"  onkeypress="return(FormatarCampo(this,'XXX/XX', event));" onKeyup="this.value = this.value.toUpperCase();" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-2 tc-label left">
+							<label>Data Exped.:</label>
+						</div>
+						<div class="col-t-2 left">
+							<input value="" id="dataExpedicao_2" name="dataExpedicao_2" onkeypress="return FormatarData(this, event)" maxlength="10" onblur="ValidarCampo(this, event);">
+						</div>
+
+					</div>
+
+					<div class="row-prop group">
+						
+						<div class="col-t-2 tc-label left">
+							<label>Endereço:</label>
+						</div>
+						<div class="col-t-6 left">
+							<input value="" id="endereco_2" name="endereco_2" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-1 left">
+							<label>Bairro:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="bairro_2" name="bairro_2" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-1 tc-label left">
+							<label>CEP:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="cep_2" name="cep_2" onkeypress="return(FormatarCampo(this,'99999-999', event))" onblur="ValidarCampo(this, event);">
+						</div>
+
+					</div>
+
+					<div class="row-prop group">
+						
+						<div class="col-t-2 tc-label left">
+							<label>Cidade/UF:</label>
+						</div>
+						<div class="col-t-5 left">
+							<input value="" id="cidade_2" name="cidade_2" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-2 left">
+							<label>Fone Resid.:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="foneResidencial_2" name="foneResidencial_2"  onkeypress="return(FormatarCampo(this,'(99) 9999999999', event))" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-4 tc-label left">
+							
+						</div>
+
+					</div>
+
+					<div class="row-prop group">
+						
+						<div class="col-t-2 tc-label left">
+							<label>End.comercial:</label>
+						</div>
+						<div class="col-t-6 left">
+							<input value="" id="enderecoComercial_2" name="enderecoComercial_2" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-1 left">
+							<label>Bairro:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="bairroComercial_2" name="bairroComercial_2" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-1 tc-label left">
+							<label>CEP:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="cepComercial_2" name="cepComercial_2"  onkeypress="return(FormatarCampo(this,'99999-999', event))" onblur="ValidarCampo(this, event);">
+						</div>
+
+					</div>
+
+					<div class="row-prop group">
+						
+						<div class="col-t-2 tc-label left">
+							<label>Cidade/UF:</label>
+						</div>
+						<div class="col-t-5 left">
+							<input value="" id="cidadeComercial_2" name="cidadeComercial_2" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-2 left">
+							<label>Fone Comerc.:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="foneComercial_2" name="foneComercial_2" onkeypress="return(FormatarCampo(this,'(99) 9999999999', event))" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-1 tc-label left">
+							<label>Cel.:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="celular_2" name="celular_2" onkeypress="return(FormatarCampo(this,'(99) 9999999999', event))" onblur="ValidarCampo(this, event);">
+						</div>
+
+					</div>
+
+					<div class="row-prop group">
+						
+						<div class="col-t-2 tc-label left">
+							<label>Estado Civil:</label>
+						</div>
+						<div class="col-t-3 left">
+							<select size="1" name="estadoCivil_2" id="estadoCivil_2" onkeypress="return handleEnter(this, event);">
+								<option selected value="solteiro">Solteiro</option>
+								<option value="casado">Casado</option>
+								<option value="divorciado">Divorciado</option>
+								<option value="separadoJudicialmente">Separado Judicialmente</option>
+								<option value="viuvo">Viúvo</option>
+								<option value="outros">Outros</option>
+							</select>
+						</div>
+						<div class="col-t-3 tc-label left">
+							<label>Regime de Casamento:</label>
+						</div>
+						<div class="col-t-4 left">
+							<input value="" id="regimeCasamento_2" name="regimeCasamento_2" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-1 tc-label left">
+							<label>Data:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="dataCasamento_2" name="dataCasamento_2" onkeypress="return FormatarData(this, event)" maxlength="10" onblur="ValidarCampo(this, event);">
+						</div>
+
+					</div>
+					
+					<div class="tc-div-conjuge_2">
+						<div class="row-prop group">
+							
+							<div class="col-t-2 tc-label left">
+								<label>Cônjuge:</label>
+							</div>
+							<div class="col-t-8 left">
+								<input value="" id="conjugue_2" name="conjugue_2" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+							</div>
+							<div class="col-t-2 tc-label left">
+								<label>Nascimento:</label>
+							</div>
+							<div class="col-t-4 left">
+								<input value="" id="dataNascimentoCojugue_2" name="dataNascimentoCojugue_2" onkeypress="return FormatarData(this, event)" maxlength="10" onblur="ValidarCampo(this, event);">
+							</div>
+
+						</div>
+
+						<div class="row-prop group">
+							
+							<div class="col-t-2 left">
+								<label>Profissão:</label>
+							</div>
+							<div class="col-t-3 left">
+								<input value="" id="profissaoCojugue_2" name="profissaoCojugue_2" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+							</div>
+							<div class="col-t-2 left">
+								<label>Nacionalidade:</label>
+							</div>
+							<div class="col-t-3 left">
+								<input value="" id="nacionalidadeCojugue_2" name="nacionalidadeCojugue_2" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+							</div>
+							<div class="col-t-2 left">
+								<label>Naturalidade:</label>
+							</div>
+							<div class="col-t-4 left">
+								<input value="" id="naturalidadeCojugue_2" name="naturalidadeCojugue_2" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+							</div>
+
+						</div>
+
+						<div class="row-prop group">
+							
+							<div class="col-t-2 tc-label left">
+								<label>CPF/MF:</label>
+							</div>
+							<div class="col-t-3 left">
+								<input value="" id="cpfCojugue_2" name="cpfCojugue_2" onkeypress="return(FormatarCampo(this,'999.999.999-99', event))" onblur="ValidarCampo(this, event);">
+							</div>
+							<div class="col-t-1 left">
+								<label>RG:</label>
+							</div>
+							<div class="col-t-2 left">
+								<input value="" id="rgCojugue_2" name="rgCojugue_2" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+							</div>
+							<div class="col-t-2 tc-label left">
+								<label>Orgão Emissor:</label>
+							</div>
+							<div class="col-t-2 left">
+								<input value="" id="orgaoEmissorCojugue_2" name="orgaoEmissorCojugue_2" onkeypress="return(FormatarCampo(this,'XXX/XX', event));" onKeyup="this.value = this.value.toUpperCase();" onblur="ValidarCampo(this, event);">
+							</div>
+							<div class="col-t-2 tc-label left">
+								<label>Data Exped.:</label>
+							</div>
+							<div class="col-t-2 left">
+								<input value="" id="dataExpedicaoCojugue_2" name="dataExpedicaoCojugue_2" onkeypress="return FormatarData(this, event)" maxlength="10" onblur="ValidarCampo(this, event);">
+							</div>
+
+						</div>
+					</div> <!-- fim da area do conjuge -->
+				</div><!-- fim do proponente 2 -->
+
+				<div class="tc-div-proponente">
+					<div class="row-prop group">
+						
+						<div class="col-t-2 left">
+							<label>Nome:</label>
+						</div>
+						<div class="col-t-8 left">
+							<input value="" id="nome_3" name="nome_3" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-2 left">
+							<label>Nascimento:</label>
+						</div>
+						<div class="col-t-4 left">
+							<input value="" id="dataNascimento_3" name="dataNascimento_3" onkeypress="return FormatarData(this, event)" maxlength="10" onblur="ValidarCampo(this, event);">
+						</div>
+
+					</div>
+
+					<div class="row-prop group">
+						
+						<div class="col-t-2 left">
+							<label>Profissão:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="profissao_3" name="profissao_3" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-2 left">
+							<label>Nacionalidade:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="nacionalidade_3" name="nacionalidade_3" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-2 left">
+							<label>Naturalidade:</label>
+						</div>
+						<div class="col-t-4 left">
+							<input value="" id="naturalidade_3" name="naturalidade_3" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+
+					</div>
+
+					<div class="row-prop group">
+						<div class="col-t-2 left">
+							<label>E-mail:</label>
+						</div>
+						<div class="col-t-14 left">
+							<input value="" id="email_3" name="email_3" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+					</div>
+
+					<div class="row-prop group">
+						
+						<div class="col-t-2 tc-label left">
+							<label>CPF/MF:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="cpf_3" name="cpf_3"  onkeypress="return(FormatarCampo(this,'999.999.999-99', event))" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-1 left">
+							<label>RG:</label>
+						</div>
+						<div class="col-t-2 left">
+							<input value="" id="rg_3" name="rg_3" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-2 tc-label left">
+							<label>Orgão Emissor:</label>
+						</div>
+						<div class="col-t-2 left">
+							<input value="" id="orgaoEmissor_3" name="orgaoEmissor_3"  onkeypress="return(FormatarCampo(this,'XXX/XX', event));" onKeyup="this.value = this.value.toUpperCase();" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-2 tc-label left">
+							<label>Data Exped.:</label>
+						</div>
+						<div class="col-t-2 left">
+							<input value="" id="dataExpedicao_3" name="dataExpedicao_3" onkeypress="return FormatarData(this, event)" maxlength="10" onblur="ValidarCampo(this, event);">
+						</div>
+
+					</div>
+
+					<div class="row-prop group">
+						
+						<div class="col-t-2 tc-label left">
+							<label>Endereço:</label>
+						</div>
+						<div class="col-t-6 left">
+							<input value="" id="endereco_3" name="endereco_3" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-1 left">
+							<label>Bairro:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="bairro_3" name="bairro_3" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-1 tc-label left">
+							<label>CEP:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="cep_3" name="cep_3" onkeypress="return(FormatarCampo(this,'99999-999', event))" onblur="ValidarCampo(this, event);">
+						</div>
+
+					</div>
+
+					<div class="row-prop group">
+						
+						<div class="col-t-2 tc-label left">
+							<label>Cidade/UF:</label>
+						</div>
+						<div class="col-t-5 left">
+							<input value="" id="cidade_3" name="cidade_3" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-2 left">
+							<label>Fone Resid.:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="foneResidencial_3" name="foneResidencial_3"  onkeypress="return(FormatarCampo(this,'(99) 9999999999', event))" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-4 tc-label left">
+						</div>
+
+					</div>
+
+					<div class="row-prop group">
+						
+						<div class="col-t-2 tc-label left">
+							<label>End.comercial:</label>
+						</div>
+						<div class="col-t-6 left">
+							<input value="" id="enderecoComercial_3" name="enderecoComercial_3" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-1 left">
+							<label>Bairro:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="bairroComercial_3" name="bairroComercial_3" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-1 tc-label left">
+							<label>CEP:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="cepComercial_3" name="cepComercial_3"  onkeypress="return(FormatarCampo(this,'99999-999', event))" onblur="ValidarCampo(this, event);">
+						</div>
+
+					</div>
+
+					<div class="row-prop group">
+						
+						<div class="col-t-2 tc-label left">
+							<label>Cidade/UF:</label>
+						</div>
+						<div class="col-t-5 left">
+							<input value="" id="cidadeComercial_3" name="cidadeComercial_3" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-2 left">
+							<label>Fone Comerc.:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="foneComercial_3" name="foneComercial_3" onkeypress="return(FormatarCampo(this,'(99) 9999999999', event))" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-1 tc-label left">
+							<label>Cel.:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="celular_3" name="celular_3" onkeypress="return(FormatarCampo(this,'(99) 9999999999', event))" onblur="ValidarCampo(this, event);">
+						</div>
+
+					</div>
+
+					<div class="row-prop group">
+						
+						<div class="col-t-2 tc-label left">
+							<label>Estado Civil:</label>
+						</div>
+						<div class="col-t-3 left">
+							<select size="1" name="estadoCivil_3" id="estadoCivil_3" onkeypress="return handleEnter(this, event);">
+								<option selected value="solteiro">Solteiro</option>
+								<option value="casado">Casado</option>
+								<option value="divorciado">Divorciado</option>
+								<option value="separadoJudicialmente">Separado Judicialmente</option>
+								<option value="viuvo">Viúvo</option>
+								<option value="outros">Outros</option>
+							</select>
+						</div>
+						<div class="col-t-3 tc-label left">
+							<label>Regime de Casamento:</label>
+						</div>
+						<div class="col-t-4 left">
+							<input value="" id="regimeCasamento_3" name="regimeCasamento_3" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-1 tc-label left">
+							<label>Data:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="dataCasamento_3" name="dataCasamento_3" onkeypress="return FormatarData(this, event)" maxlength="10" onblur="ValidarCampo(this, event);">
+						</div>
+
+					</div>
+					
+					<div class="tc-div-conjuge_3">
+						<div class="row-prop group">
+							
+							<div class="col-t-2 tc-label left">
+								<label>Cônjuge:</label>
+							</div>
+							<div class="col-t-8 left">
+								<input value="" id="conjugue_3" name="conjugue_3" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+							</div>
+							<div class="col-t-2 tc-label left">
+								<label>Nascimento:</label>
+							</div>
+							<div class="col-t-4 left">
+								<input value="" id="dataNascimentoCojugue_3" name="dataNascimentoCojugue_3" onkeypress="return FormatarData(this, event)" maxlength="10" onblur="ValidarCampo(this, event);">
+							</div>
+
+						</div>
+
+						<div class="row-prop group">
+							
+							<div class="col-t-2 left">
+								<label>Profissão:</label>
+							</div>
+							<div class="col-t-3 left">
+								<input value="" id="profissaoCojugue_3" name="profissaoCojugue_3" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+							</div>
+							<div class="col-t-2 left">
+								<label>Nacionalidade:</label>
+							</div>
+							<div class="col-t-3 left">
+								<input value="" id="nacionalidadeCojugue_3" name="nacionalidadeCojugue_3" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+							</div>
+							<div class="col-t-2 left">
+								<label>Naturalidade:</label>
+							</div>
+							<div class="col-t-4 left">
+								<input value="" id="naturalidadeCojugue_3" name="naturalidadeCojugue_3" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+							</div>
+
+						</div>
+
+						<div class="row-prop group">
+							
+							<div class="col-t-2 tc-label left">
+								<label>CPF/MF:</label>
+							</div>
+							<div class="col-t-3 left">
+								<input value="" id="cpfCojugue_3" name="cpfCojugue_3" onkeypress="return(FormatarCampo(this,'999.999.999-99', event))" onblur="ValidarCampo(this, event);">
+							</div>
+							<div class="col-t-1 left">
+								<label>RG:</label>
+							</div>
+							<div class="col-t-2 left">
+								<input value="" id="rgCojugue_3" name="rgCojugue_3" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+							</div>
+							<div class="col-t-2 tc-label left">
+								<label>Orgão Emissor:</label>
+							</div>
+							<div class="col-t-2 left">
+								<input value="" id="orgaoEmissorCojugue_3" name="orgaoEmissorCojugue_3" onkeypress="return(FormatarCampo(this,'XXX/XX', event));" onKeyup="this.value = this.value.toUpperCase();" onblur="ValidarCampo(this, event);">
+							</div>
+							<div class="col-t-2 tc-label left">
+								<label>Data Exped.:</label>
+							</div>
+							<div class="col-t-2 left">
+								<input value="" id="dataExpedicaoCojugue_3" name="dataExpedicaoCojugue_3" onkeypress="return FormatarData(this, event)" maxlength="10" onblur="ValidarCampo(this, event);">
+							</div>
+
+						</div>
+					</div> <!-- fim da area do conjuge -->
+				</div><!-- fim do proponente 3 -->
+
+				<div class="tc-div-proponente">
+					<div class="row-prop group">
+						
+						<div class="col-t-2 left">
+							<label>Nome:</label>
+						</div>
+						<div class="col-t-8 left">
+							<input value="" id="nome_4" name="nome_4" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-2 left">
+							<label>Nascimento:</label>
+						</div>
+						<div class="col-t-4 left">
+							<input value="" id="dataNascimento_4" name="dataNascimento_4" onkeypress="return FormatarData(this, event)" maxlength="10" onblur="ValidarCampo(this, event);">
+						</div>
+
+					</div>
+
+					<div class="row-prop group">
+						
+						<div class="col-t-2 left">
+							<label>Profissão:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="profissao_4" name="profissao_4" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-2 left">
+							<label>Nacionalidade:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="nacionalidade_4" name="nacionalidade_4" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-2 left">
+							<label>Naturalidade:</label>
+						</div>
+						<div class="col-t-4 left">
+							<input value="" id="naturalidade_4" name="naturalidade_4" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+
+					</div>
+
+					<div class="row-prop group">
+						<div class="col-t-2 left">
+							<label>E-mail:</label>
+						</div>
+						<div class="col-t-14 left">
+							<input value="" id="email_4" name="email_4" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+					</div>
+
+					<div class="row-prop group">
+						
+						<div class="col-t-2 tc-label left">
+							<label>CPF/MF:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="cpf_4" name="cpf_4"  onkeypress="return(FormatarCampo(this,'999.999.999-99', event))" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-1 left">
+							<label>RG:</label>
+						</div>
+						<div class="col-t-2 left">
+							<input value="" id="rg_4" name="rg_4" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-2 tc-label left">
+							<label>Orgão Emissor:</label>
+						</div>
+						<div class="col-t-2 left">
+							<input value="" id="orgaoEmissor_4" name="orgaoEmissor_4"  onkeypress="return(FormatarCampo(this,'XXX/XX', event));" onKeyup="this.value = this.value.toUpperCase();" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-2 tc-label left">
+							<label>Data Exped.:</label>
+						</div>
+						<div class="col-t-2 left">
+							<input value="" id="dataExpedicao_4" name="dataExpedicao_4" onkeypress="return FormatarData(this, event)" maxlength="10" onblur="ValidarCampo(this, event);">
+						</div>
+
+					</div>
+
+					<div class="row-prop group">
+						
+						<div class="col-t-2 tc-label left">
+							<label>Endereço:</label>
+						</div>
+						<div class="col-t-6 left">
+							<input value="" id="endereco_4" name="endereco_4" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-1 left">
+							<label>Bairro:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="bairro_4" name="bairro_4" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-1 tc-label left">
+							<label>CEP:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="cep_4" name="cep_4" onkeypress="return(FormatarCampo(this,'99999-999', event))" onblur="ValidarCampo(this, event);">
+						</div>
+
+					</div>
+
+					<div class="row-prop group">
+						
+						<div class="col-t-2 tc-label left">
+							<label>Cidade/UF:</label>
+						</div>
+						<div class="col-t-5 left">
+							<input value="" id="cidade_4" name="cidade_4" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-2 left">
+							<label>Fone Resid.:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="foneResidencial_4" name="foneResidencial_4"  onkeypress="return(FormatarCampo(this,'(99) 9999999999', event))" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-4 tc-label left">
+							
+						</div>
+
+					</div>
+
+					<div class="row-prop group">
+						
+						<div class="col-t-2 tc-label left">
+							<label>End.comercial:</label>
+						</div>
+						<div class="col-t-6 left">
+							<input value="" id="enderecoComercial_4" name="enderecoComercial_4" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-1 left">
+							<label>Bairro:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="bairroComercial_4" name="bairroComercial_4" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-1 tc-label left">
+							<label>CEP:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="cepComercial_4" name="cepComercial_4"  onkeypress="return(FormatarCampo(this,'99999-999', event))" onblur="ValidarCampo(this, event);">
+						</div>
+
+					</div>
+
+					<div class="row-prop group">
+						
+						<div class="col-t-2 tc-label left">
+							<label>Cidade/UF:</label>
+						</div>
+						<div class="col-t-5 left">
+							<input value="" id="cidadeComercial_4" name="cidadeComercial_4" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-2 left">
+							<label>Fone Comerc.:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="foneComercial_4" name="foneComercial_4" onkeypress="return(FormatarCampo(this,'(99) 9999999999', event))" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-1 tc-label left">
+							<label>Cel.:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="celular_4" name="celular_4" onkeypress="return(FormatarCampo(this,'(99) 9999999999', event))" onblur="ValidarCampo(this, event);">
+						</div>
+
+					</div>
+
+					<div class="row-prop group">
+						
+						<div class="col-t-2 tc-label left">
+							<label>Estado Civil:</label>
+						</div>
+						<div class="col-t-3 left">
+							<select size="1" name="estadoCivil_4" id="estadoCivil_4" onkeypress="return handleEnter(this, event);">
+								<option selected value="solteiro">Solteiro</option>
+								<option value="casado">Casado</option>
+								<option value="divorciado">Divorciado</option>
+								<option value="separadoJudicialmente">Separado Judicialmente</option>
+								<option value="viuvo">Viúvo</option>
+								<option value="outros">Outros</option>
+							</select>
+						</div>
+						<div class="col-t-3 tc-label left">
+							<label>Regime de Casamento:</label>
+						</div>
+						<div class="col-t-4 left">
+							<input value="" id="regimeCasamento_4" name="regimeCasamento_4" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+						</div>
+						<div class="col-t-1 tc-label left">
+							<label>Data:</label>
+						</div>
+						<div class="col-t-3 left">
+							<input value="" id="dataCasamento_4" name="dataCasamento_4" onkeypress="return FormatarData(this, event)" maxlength="10" onblur="ValidarCampo(this, event);">
+						</div>
+
+					</div>
+					
+					<div class="tc-div-conjuge_4">
+						<div class="row-prop group">
+							
+							<div class="col-t-2 tc-label left">
+								<label>Cônjuge:</label>
+							</div>
+							<div class="col-t-8 left">
+								<input value="" id="conjugue_4" name="conjugue_4" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+							</div>
+							<div class="col-t-2 tc-label left">
+								<label>Nascimento:</label>
+							</div>
+							<div class="col-t-4 left">
+								<input value="" id="dataNascimentoCojugue_4" name="dataNascimentoCojugue_4" onkeypress="return FormatarData(this, event)" maxlength="10" onblur="ValidarCampo(this, event);">
+							</div>
+
+						</div>
+
+						<div class="row-prop group">
+							
+							<div class="col-t-2 left">
+								<label>Profissão:</label>
+							</div>
+							<div class="col-t-3 left">
+								<input value="" id="profissaoCojugue_4" name="profissaoCojugue_4" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+							</div>
+							<div class="col-t-2 left">
+								<label>Nacionalidade:</label>
+							</div>
+							<div class="col-t-3 left">
+								<input value="" id="nacionalidadeCojugue_4" name="nacionalidadeCojugue_4" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+							</div>
+							<div class="col-t-2 left">
+								<label>Naturalidade:</label>
+							</div>
+							<div class="col-t-4 left">
+								<input value="" id="naturalidadeCojugue_4" name="naturalidadeCojugue_4" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+							</div>
+
+						</div>
+
+						<div class="row-prop group">
+							
+							<div class="col-t-2 tc-label left">
+								<label>CPF/MF:</label>
+							</div>
+							<div class="col-t-3 left">
+								<input value="" id="cpfCojugue_4" name="cpfCojugue_4" onkeypress="return(FormatarCampo(this,'999.999.999-99', event))" onblur="ValidarCampo(this, event);">
+							</div>
+							<div class="col-t-1 left">
+								<label>RG:</label>
+							</div>
+							<div class="col-t-2 left">
+								<input value="" id="rgCojugue_4" name="rgCojugue_4" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+							</div>
+							<div class="col-t-2 tc-label left">
+								<label>Orgão Emissor:</label>
+							</div>
+							<div class="col-t-2 left">
+								<input value="" id="orgaoEmissorCojugue_4" name="orgaoEmissorCojugue_4" onkeypress="return(FormatarCampo(this,'XXX/XX', event));" onKeyup="this.value = this.value.toUpperCase();" onblur="ValidarCampo(this, event);">
+							</div>
+							<div class="col-t-2 tc-label left">
+								<label>Data Exped.:</label>
+							</div>
+							<div class="col-t-2 left">
+								<input value="" id="dataExpedicaoCojugue_4" name="dataExpedicaoCojugue_4" onkeypress="return FormatarData(this, event)" maxlength="10" onblur="ValidarCampo(this, event);">
+							</div>
+
+						</div>
+					</div> <!-- fim da area do conjuge -->
+				</div><!-- fim do proponente 4 -->
+
+				<div class="row-prop group">
+					<div class="col-t-4 left">
+						<label for="imobComercializadora">Imobiliária Comercializadora:</label>
+					</div>
+					<div class="col-t-6 left">
+						<input value="" id="imobComercializadora" name="imobComercializadora" onblur="ValidarCampo(this, event);">
+					</div>
+					<div class="col-t-1 left">
+						<label for="creciImobComercializadora">Creci:</label>
+					</div>
+					<div class="col-t-5 left">
+						<input value="" id="creciImobComercializadora" name="creciImobComercializadora" onblur="ValidarCampo(this, event);">
+					</div>
+				</div>
+
+				<div class="row-prop group">
+					<div class="col-t-2 left">
+						<label for="vendedora">Vendedora:</label>
+					</div>
+					<div class="col-t-14 left">
+						<input value="" id="vendedora" name="vendedora" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);" readonly>
+					</div>
+				</div>
+
+				<div class="row-prop group">
+					<div class="col-t-2 left">
+						<label for="cnpjVendedora">CNPJ/MF:</label>
+					</div>
+					<div class="col-t-14 left">
+						<input value="" id="cnpjVendedora" name="cnpjVendedora" onkeypress="return handleEnter(this, event);" readonly>
+					</div>
+				</div>
+
+				<div class="row-prop group">
+					<div class="col-t-3 left">
+						<label for="empreendimento">Empreendimento:</label>
+					</div>
+					<div class="col-t-13 left">
+						<input value="" id="empreendimento" name="empreendimento" onkeypress="return handleEnter(this, event);" readonly>
+					</div>
+				</div>
+
+				 <div class="row-prop group">
+            <div class="col-t-3 left">
+              <label>Descrição do Imóvel:</label>
+            </div>
+            <div class="col-t-1 left text-right">
+                <label for="numero">N°:</label>
+            </div>
+            <div class="col-t-1 left">
+                <input value="" id="numero" name="numero" onkeypress="return handleEnter(this, event);">
+            </div>
+            <div class="col-t-1 left">
+                <label for="quadra">Quadra:</label>
+            </div>
+            <div class="col-t-1 left" style="padding-left:8px;">
+                <input value="" id="quadra" name="quadra" onkeypress="return handleEnter(this, event);">
+            </div>
+            <div class="col-t-1 left">
+                <label for="area">Área:</label>
+            </div>
+            <div class="col-t-3 left">
+                <input value="" id="area" name="area" onkeypress="return handleEnter(this, event);">
+            </div>
+            <div class="col-t-5 left">
+            		<!--<i class="fa fa-search fa-fw btn_zoomExterno nao_imprimir"></i>-->
+            </div>
+        </div>
+
+				<div class="row-prop group">
+					<div class="col-t-3 left">
+						<label for="valorTotal">Valor total da venda:</label>
+					</div>
+					<div class="col-t-1 left text-right">
+						<span>R$</span>
+					</div>
+					<div class="col-t-12 left">
+						<div class="junta-valor-extenso">
+							<div class="junta-valor">
+								<input value="" id="valorTotal" name="valorTotal" onkeypress="return(FormatarValor(this,'.',',',event,14))" readonly onBlur="ValidarCampo(this, event);">
+							</div>
+							<div class="junta-extenso">
+								<span class="text-valorExtenso valorTotal_Extenso"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row-prop group">
+					<div class="col-t-6 left">
+						<label for="valorIntermediacaoImob">
+							Instrumento de Intermediação Imobiliária:
+						</label>
+					</div>
+					<div class="col-t-1 left text-right">
+						<span>R$</span>
+					</div>
+					<div class="col-t-3 left">
+						<input value="" id="valorIntermediacaoImob" name="valorIntermediacaoImob" onkeypress="return(FormatarValor(this,'.',',',event,14))" onBlur="CalcularSaldo(this);">
+					</div>
+					<div class="col-t-6 left">
+						<span class="text-valorExtenso valorIntermediacaoImob_Extenso"></span>
+					</div>
+				</div>
+
+				<div class="row-prop group">
+					<div class="col-t-3 left">
+						<label for="valorSinal">
+							Valor do Sinal:
+						</label>
+					</div>
+					<div class="col-t-1 left text-right">
+						<span>R$</span>
+					</div>
+					<div class="col-t-12 left">
+						<div class="junta-valor-extenso">
+							<div class="junta-valor">
+								<input value="" id="valorSinal" name="valorSinal" onkeypress="return(FormatarValor(this,'.',',',event,14))" onBlur="CalcularSaldo(this); MostrarExtenso(); ValidarCampo(this, event);">
+							</div>
+							<div class="junta-extenso">
+								<span class="text-valorExtenso valorSinal_Extenso"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row-prop group" style="border-bottom: none;">
+					<div class="col-t-11 left">
+						<p>O valor do sinal será pago/parcelado conforme discriminado no quadro abaixo, em</p>
+					</div>
+					<div class="col-t-5 left tipo-pagamentoSinal">
+						<select size="1" name="pagamentoSinal" id="pagamentoSinal"><!--onchange="SelecionarPagamentoSinal(this);" onkeypress="return handleEnter(this, event);"-->
+
+							<option value="boleto" selected="selected">Boleto</option>
+							<option value="cheque">Cheque</option>
+							<option value="outros">Outros</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="row-prop" style="border-bottom: none;">
+					<div id="divBoleto">
+
+						<div class="botao-area"><input type="button" class="btn-addChild not-print botao-acao" onclick="wdkAddChild('tabelaBoleto')" value="+ BOLETO"></div>
+
+						<table width="100%" tablename="tabelaBoleto" noaddbutton="true" id="tabelaBoleto">
+							<thead>
+								<tr class="tit-tabelaProposta">
+									<td>
+										Tipo
+									</td>
+									<td>
+										Valor
+									</td>
+									<td>
+										Data de Vencimento
+									</td>
+									<td>
+										Observações
+									</td>
+								</tr>
+							</thead>
+							<tr>
+                <td>
+                    <input value="BOLETO" id="tipoBoleto" name="tipoBoleto" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+                </td>
+                <td>
+                    <input value="" id="valorBoleto" name="valorBoleto" onkeypress="return(FormatarValor(this,'.',',',event,14))"  onblur="ValidarCampo(this, event);">
+                </td>
+                <td>
+                    <input value="" id="vencimentoBoleto" name="vencimentoBoleto" onkeypress="return FormatarData(this, event)" maxlength="10" onblur="ValidarCampo(this, event);">
+                </td>
+                <td>
+                    <input value="" id="obsBoleto" name="obsBoleto" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+                </td>
+              </tr>
+						</table>
+					</div>
+					<div id="divCheque">
+
+						
+							<div class="botao-area"><input type="button" class="btn-addChild not-print botao-acao" onclick="wdkAddChild('tabelaCheque')" value="+ CHEQUE"></div>
+
+			            <table width="100%" tablename='tabelaCheque' id="tabelaCheque" noaddbutton="true">
+			            	<thead>
+			                <tr class="tit-tabelaProposta">
+			                    <td>
+			                        Ordem
+			                    </td>
+			                    <td>
+			                        Banco
+			                    </td>
+			                    <td>
+			                        N° Agência
+			                    </td>
+			                    <td>
+			                        N° Cheque
+			                    </td>
+			                    <td>
+			                        Data Vencimento
+			                    </td>
+			                    <td>
+			                        Valor do Cheque
+			                    </td>
+			                </tr>
+			              </thead>
+			                <tr>
+			                    <td>
+			                        <input value="" id="ordemCheque" name="ordemCheque" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+			                    </td>
+			                    <td>
+			                        <input value="" id="bancoCheque" name="bancoCheque" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+			                    </td>
+			                    <td>
+			                        <input value="" id="agenciaCheque" name="agenciaCheque" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+			                    </td>
+			                    <td>
+			                        <input value="" id="chequeCheque" name="chequeCheque" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+			                    </td>
+			                    <td>
+			                        <input value="" id="vencimentoCheque" name="vencimentoCheque" onkeypress="return FormatarData(this, event)" maxlength="10" onblur="ValidarCampo(this, event);">
+			                    </td>
+			                    <td>
+			                        <input value="" id="valorCheque" name="valorCheque" onkeypress="return(FormatarValor(this,'.',',',event,14))"  onblur="ValidarCampo(this, event);">
+			                    </td>
+			                </tr>
+			            </table>
+		        	</div>
+		        	<div id="divOutros">
+
+								<div class="botao-area"><input type="button" class="btn-addChild not-print botao-acao" onclick="wdkAddChild('tabelaOutros')" value="+ OUTRO"></div>
+
+		            	<table width="100%" tablename='tabelaOutros' id="tabelaOutros" noaddbutton="true">
+		            		<thead>
+			                <tr class="tit-tabelaProposta">
+			                    <td>
+			                        Tipo
+			                    </td>
+			                    <td>
+			                        Valor
+			                    </td>
+			                    <td>
+			                        Data de Vencimento
+			                    </td>
+			                    <td>
+			                        Observações
+			                    </td>
+			                </tr>
+			              </thead>
+			                <tr>
+			                    <td>
+			                        <input class="campo100px" value="" id="tipoOutros" name="tipoOutros" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+			                    </td>
+			                    <td>
+			                        <input class="campo100px" value="" id="valorOutros" name="valorOutros" onkeypress="return(FormatarValor(this,'.',',',event,14))"  onblur="ValidarCampo(this, event);">
+			                    </td>
+			                    <td>
+			                        <input class="campo100px" value="" id="vencimentoOutros" name="vencimentoOutros" onkeypress="return FormatarData(this, event)" maxlength="10" onblur="ValidarCampo(this, event);">
+			                    </td>
+			                    <td>
+			                        <input class="campo358px" value="" id="obsOutros" name="obsOutros" onkeypress="return handleEnter(this, event);" onblur="ValidarCampo(this, event);">
+			                    </td>
+			                </tr>
+		            	</table>
+		        	</div>
+				</div>
+
+				<div class="row-prop group">
+					<div class="col-t-16 left">
+						<p>Formas de Pagamento do Saldo a Pagar:</p>
+					</div>
+				</div>
+
+				<div class="row-prop group">
+					<div class="col-t-4 left">
+						<label for="">Valor do Saldo a Pagar:</label>
+					</div>
+					<div class="col-t-1 left text-right">
+						<span>R$</span>
+					</div>
+					<div class="col-t-11 left">
+						<div class="junta-valor-extenso">
+							<div class="junta-valor">
+								<input value="" id="valorSaldo" name="valorSaldo" onkeypress="return(FormatarValor(this,'.',',',event,14))" readonly onBlur="ValidarCampo(this, event);">	
+							</div>
+							<div class="junta-extenso">
+								<span class="text-valorExtenso valorSaldo_Extenso"></span>
+							</div>							
+						</div>
+					</div>
+				</div>
+
+				<!--<div class="row-prop group">
+					<div class="col-t-1 left">
+						<input value="" id="quantidadeParcelas" name="quantidadeParcelas" onkeypress="return(FormatarCampo(this,'9999', event))" onBlur="CalcularSaldo(this); ValidarCampo(this, event);">
+					</div>
+					<div class="col-t-2 left text-center">
+						<label for="valorParcela">parcela(s) de R$</label>
+					</div>
+					<div class="col-t-3 left">
+						<input value="" id="valorParcela" name="valorParcela" onkeypress="return(FormatarValor(this,'.',',',event,14))" onBlur="CalcularSaldo(this); ValidarCampo(this, event);" >
+					</div>
+					<div class="col-t-10 left">
+						<span class="valorParcela_preExtenso">(</span>
+						<span class="valorParcela_Extenso"></span>
+						<span class="valorParcela_posExtenso">)</span>
+					</div>
+				</div>-->
+				
+				<div class="botao-area"><input type="button" class="btn-addChild not-print botao-acao" onclick="wdkAddChild('tabelaFormaPagamento')" value="+ PAGAMENTO"></div>
+
+				<div class="row-prop" style="border-bottom:none;">
+				<table tablename='tabelaFormaPagamento' id="tabelaFormaPagamento" noaddbutton="true" customFnDelete="fnCustomDelete(this)">
+					<thead>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="row-prop">
+							<td class="col-t-1 qtdeParcelas-area text-right" style="padding-right:4px;">
+								<input value="" id="quantidadeParcelas" name="quantidadeParcelas" onkeypress="return(FormatarCampo(this,'9999', event))" onBlur="CalcularSaldo(this); ValidarCampo(this, event);">					
+							</td>
+							<td class="col-t-15">
+								<div class="junta-valor-extenso">
+									<div class="junta-extenso">
+										<label for="valorParcela" style="padding-right:8px;">parcela(s) de R$</label>
+									</div>
+									<div class="junta-valor">
+										<input value="" class="valorParcela" id="valorParcela" name="valorParcela" onkeypress="return(FormatarValor(this,'.',',',event,14))" >
+									</div>
+									<div class="junta-extenso">
+										<span id="Extenso_valorParcela" class="text-valorExtenso Extenso_valorParcela"></span>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				</div>
+
+				<div class="row-prop group">
+					<div class="col-t-4 left">
+						<label for="vencimento">Sendo a 1ª parcela vencível em</label>
+					</div>
+					<div class="col-t-3 left">
+						<input value="" id="vencimento" name="vencimento" onkeypress="return FormatarData(this, event)" maxlength="10" onBlur="ValidarCampo(this, event);">
+					</div>
+					<div class="col-t-9 left">
+						<label for="vencimento">
+							e, as demais, no mesmo dia dos meses subsequentes.
+						</label>
+					</div>
+				</div>
+				
+				<div class="row-prop group">
+					<div class="col-t-3 left">
+						<label>Índice de Reajuste:</label>
+					</div>
+					<div class="col-t-4 left">
+						<select name="indiceReajuste" id="indiceReajuste" size="1">
+		          <option value="ipca" selected>IPCA</option>
+							<option value="igpm">IGP-M</option>
+							<option value="parcelasFixas">Parcelas Fixas</option>
+							<option value="outros">Outros</option>
+						</select>
+					</div>
+					<div class="col-t-9 left">
+						<div class="campoIndiceOutros">
+							<input value="" id="indiceOutros" name="indiceOutros" onkeypress="return handleEnter(this, event);" onBlur="ValidarCampo(this, event);">
+						</div>
+					</div>
+				</div>
+
+				<div class="row-prop group bloco-observacao">
+					<div class="col-t-16 left">
+						<textarea id="observacoes" name="observacoes" rows="4" placeholder="OBS:"></textarea>
+					</div>
+				</div>
+
+				<p class="texto-igual text-center text-upper">
+					Aprovação da Proposta/Recebimento de Sinal
+				</p>
+
+				<div class="row-prop group bloco-assinaturas" style="border-bottom:none;">
+					<div class="col-t-5 left">
+						<div class="bloco-de-assinar">
+							<div class="linha-do-nome"></div>
+							<div class="categoria-vendedor">Proponente</div>
+						</div>
+						<div class="bloco-de-assinar">
+							<div class="linha-do-nome"></div>
+							<div class="categoria-vendedor">Responsável pelo Atendimento</div>
+							<div class="corretor-responsavel">Corretor - Creci nº ____________________</div>
+						</div>
+					</div>
+					<div class="col-t-6 left">
+						<div class="bloco-de-assinar center-block" style="margin-top:34px;">
+							<div class="linha-do-nome"></div>
+							<div class="categoria-vendedor">Coordenação de Vendas</div>
+						</div>
+					</div>
+					<div class="col-t-5 left">
+						<div class="right">
+							<div class="bloco-de-assinar">
+								<div class="linha-do-nome"></div>
+								<div class="categoria-vendedor">Vendedora</div>
+							</div>
+							<div class="bloco-de-assinar">
+								<div class="linha-do-nome"></div>
+								<div class="categoria-vendedor">Imobiliária Comercializadora</div>
+							</div>
+						</div>
+						<div class="group"></div>
+					</div>
+				</div>
+
+				<p class="texto-igual text-center">
+					OBS.: Obrigatório apresentar essa via na assinatura do Contrato
+				</p>
+
+				<p class="texto-igual text-left">
+					Testemunhas:
+				</p>
+
+				<div class="row-prop group bloco-testemunhas" style="border-bottom:none;">
+					<div class="col-t-8 left">
+						<div class="bloco-de-test">
+							<div class="linha-do-nome"></div>
+							<div class="dados-da-test">
+								NOME: <br>
+								RG: 
+							</div>
+						</div>
+					</div>
+					<div class="col-t-8 left">
+						<div class="right">
+							<div class="bloco-de-test">
+								<div class="linha-do-nome"></div>
+								<div class="dados-da-test">
+									NOME: <br>
+									RG: 
+								</div>
+							</div>
+						</div>
+						<div class="group"></div>
+					</div>
+				</div>
+
+				</div> <!-- /fim do anterior ao rodape preto que só aparece na impressão -->
+
+				<div class="bloco-declaracaoExpressa">
+					<p>As Condições Gerais da presente Proposta estão no verso(ou folha seguinte) desta via e deverão ser lidas atentamente pelo interessado, que, ao assiná-la, declara expressamente ter pleno conhecimento e estar de acordo com as mesmas</p>
+				</div>
+			
+			</div> <!-- /fim do wraper -->
+
+
+			<!-- quabra de página -->
+		<span class="page-break"></span>
+
+		<div class="bloco-condicoesGerais just-print">
+			<div class="tit-condicoesGerais">
+				Condições Gerais da Proposta
+			</div>
+			<div class="lista-condicoesGerais">
+				<ol class="lista-condGerais">
+					<li>
+						Esta proposta tem os seguintes prazos de validade: 
+						a. Para o(a) PROPONENTE desistir do negócio sem qualquer 
+						penalidade: 07 (sete) dias úteis a partir da data de sua assinatura. b. para o(a) VENDEDOR(A), a seu exclusivo critério, aceitar ou recusar o cadastro do(a) PROPONENTE também sem qualquer penalidade: 07 (sete) dias úteis a partir da data da efetiva entrega de todos os documentos do(a) PROPONENTE.
+					</li>
+					<li>
+						Passados os prazos descritos no item anterior sem que uma das partes, em sua respectiva oportunidade, manifeste sua desistência, por escrito, estará tacitamente convalidado o negócio entre ambas, sendo que, a partir desse momento, o desfazimento do mesmo será considerado como arrependimento, arcando a parte que se arrepender com a penalidade prevista no item 3 abaixo descrito.
+					</li>
+					<li>
+						Sendo aceita a presente proposta nos moldes e prazos ora pactuados, o negócio se tornará válido entre as partes, ficando expressamente estipulado o direito de arrependimento para qualquer uma delas, consignando-se que o sinal terá função unicamente indenizatório, de acordo com o previsto no artigo 420 do Código Civil Brasileiro.  Não sendo aceita a proposta, o (a) VENDEDOR(A) comunicará o(a) PROPONENTE por qualquer meio possível.
+					</li>
+					<li>
+						Aceita a proposta, o(a) PROPONENTE se obriga, ainda, a comparecer ao plantão de vendas onde realizou a aquisição ou onde o(a) VENDEDOR(A) indicar, para a outorga do Instrumento Particular de Venda e Compra com Pacto Adjeto de Alienação Fiduciária, cujo conteúdo declara ter tido prévio conhecimento, esclarecimento e concordância, no prazo máximo de 10 (dez) dias, contados da data em que o(a) VENDEDOR(A) disponibilizar o contrato para assinatura, sendo que,  não o fazendo, ficará caracterizado o arrependimento e o(a) PROPONENTE arcará com as consequências dele advindas.
+					</li>
+					<li>
+						Fica estipulado, desde já, que a partir da assinatura do presente instrumento, todas as despesas referentes à compra e venda aqui pactuada, se convalidada, correrão por conta do(a) PROPONENTE, incluindo mas não se limitando a: lavratura de escritura, registro do contrato ou da escritura, pagamento de ITBI, inclusive de suas multa e juros por ventura cobrados pela municipalidade, pagamento de IPTU por ventura lançada sobre o(s) lote(s), reconhecimento de firmas, extração de cópias reprográficas, extração de certidões requeridas pelo(a) PROPONENTE , etc. 
+					</li>
+					<li>
+						Em caso de venda parcelada, a aceitação da proposta por parte do(a) VENDEDOR(A) está sujeita à aprovação do cadastro do (a) PROPONENTE, sendo que, neste ato, o(a) PROPONENTE autoriza expressamente todas as consultas necessárias, em qualquer entidade ou Banco de Dados.
+					</li>
+					<li>
+						Para as vendas com pagamento parcelado, serão celebrados contratos utilizando o instituto da alienação fiduciária, nos termos da Lei 9.514/97, cujo procedimento legal o(a) PROPONENTE declara ter sido totalmente esclarecido pelo(a) VENDEDOR(A), através do responsável pelo atendimento/corretor, sendo que para sustentar o parcelamento, fica pactuado que o(a) VENDEDOR(A) poderá, a seu exclusivo critério, se valer de operações de securitização com Companhias especializadas e autorizadas.
+					</li>
+					<li>
+						As partes têm ciência de que, uma vez convalidado o negócio, do valor total da venda e a título de prestação de serviços (comissão/intermediação), o(a) VENDEDOR(A) pagará à Imobiliária Comercializadora, em conjunto com os demais participantes da venda, a importância de 6% (seis por cento), calculados sobre o mencionado valor total da venda, sendo que de tal importância será descontado o percentual/valor pago diretamente  pelo(a) PROPONENTE ao corretor por ele(a) contratado através de instrumento de intermediação imobiliária, se houver. A divisão dos valores devidos a título de comissão/intermediação entre os participantes da comercialização identificados nesta proposta foi livremente acordada por eles. Porém, em caso de arrependimento após a aceitação do negócio, a parte que se arrepender, além de arcar com a penalidade prevista no item 3 acima, realizará, a suas expensas, em favor da Imobiliária Comercializadora, em conjunto com os demais participantes da venda, o pagamento total da comissão/intermediação ora tratada,  de 6% (seis por cento), calculados sobre o  valor total da venda, sendo que de tal importância será descontado, igualmente,  o percentual/valor pago diretamente pelo(a) PROPONENTE ao corretor por ele(a) contratado através de instrumento de intermediação imobiliária, se houver. 
+					</li>
+					<li>
+						A fim de melhor assegurar o recebimento dos valores efetivamente devidos a título de comissão/intermediação do(a) VENDEDOR(A) ou do(a) PROPONENTE, conforme previsões contidas no item anterior (8), fica também expressamente pactuado que empresa responsável pela comercialização e/ou o corretor (a) poderá(ão) fazer uso do presente instrumento como título executivo extrajudicial, nos termos do artigo 585, inciso II, do Código de Processo Civil,  sendo que tal cobrança se dará de forma coletiva ou individual, a critério exclusivo dos beneficiários. 
+					</li>
+					<li>
+						Para a garantia da efetivação do negócio o(a) PROPONENTE entrega, neste ato, a imobiliária comercializadora  e/ou  o(a) responsável pelo atendimento (corretor (a)), a título de sinal, o valor descrito no anverso da presente proposta, que também poderá ser pago através da emissão de boletos bancários, para esta finalidade, valendo o presente como recibo daquela quantia efetivamente entregue e recebida. O sinal ora entregue poderá ser apenas uma consignação dada em garantia para a realização do negócio, ficando sem efeito a partir da assinatura do contrato de compra e venda ou escritura definitiva, caso assim seja estabelecido pelo(a) VENDEDOR(A).
+					</li>
+					<li>
+						Em caso de sinal parcelado, até que não houver a efetiva quitação do valor dado para essa finalidade, os instrumentos aqui mencionados, ou seja, contrato de compra e venda com pacto adjeto de alienação fiduciária ou escritura definitiva, não serão outorgados em favor do(a) PROPONENTE.
+					</li>
+				</ol>
+			</div>
+		</div>
+
+<!-- //////############# vendedoras -->
+
+        </div> <!-- fim corpo -->
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+    <script type="text/javascript" language="JavaScript" src="http://thcm.com.br/cdn-ecm/scripts/pf/v.1.0/config.js"></script>
+    <script type="text/javascript" language="JavaScript" src="empresa.js"></script>
+
+</body>
+</html>
