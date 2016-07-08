@@ -1,19 +1,23 @@
 // Formulário
 ajustaProponentes();
 ajustaData();
+ajustaPagamentoSinal();
 
 // EVENTOS
 document.querySelector(".tc-btnAddProp").addEventListener("click", addProponente);
 document.querySelector(".tc-btnCancelProp").addEventListener("click", cancelaProponente);
+document.querySelector("#pagamentoSinal").addEventListener("change", ajustaPagamentoSinal);
 
 function getValor(el) {
 
 	var elemento = document.querySelector(el);
 
-	if( elemento.tagName.toLowerCase() == "input" ) {
+	if( elemento.tagName.toLowerCase() === "input" ) {
 		return elemento.value;
-	} else if( elemento.tagName.toLowerCase == "span" ) {
+	} else if( elemento.tagName.toLowerCase() === "span" ) {
 		return elemento.textContent;
+	} else if( elemento.tagName.toLowerCase() === "select" ) {
+		return elemento.options[elemento.selectedIndex].value;
 	}
 
 }
@@ -133,4 +137,29 @@ function RetornarDataAtual() {
 			ano = "19" + ano;
 
 	return dia + "/" + mes + "/" + ano;
+}
+
+function ajustaPagamentoSinal() {
+	var valPagamentoSinal = getValor('#pagamentoSinal');
+	valPagamentoSinal = valPagamentoSinal.toLowerCase();
+
+	switch(valPagamentoSinal) {
+		case 'cheque':
+			document.querySelector('#divCheque').style.position = 'relative';
+			document.querySelector('#divCheque').style.display = '';
+			document.querySelector('#divBoleto').style.display = 'none';
+			document.querySelector('#divOutros').style.display = 'none';
+			break;
+		case 'outros':
+			document.querySelector('#divOutros').style.position = 'relative';
+			document.querySelector('#divOutros').style.display = '';
+			document.querySelector('#divBoleto').style.display = 'none';
+			document.querySelector('#divCheque').style.display = 'none';
+			break;
+		default:
+			document.querySelector('#divBoleto').style.position = 'relative';
+			document.querySelector('#divBoleto').style.display = '';
+			document.querySelector('#divCheque').style.display = 'none';
+			document.querySelector('#divOutros').style.display = 'none';
+	}
 }
