@@ -57,8 +57,6 @@ function addProponente() {
 			el.style.display = "none";
 		});		
 		Array.prototype.some.call(document.querySelectorAll('.tc-div-proponente'), function(el, i) {
-			console.log("div " + i);
-			console.log(proponente);
 			el.style.display = '';
 			return i+1 === proponente;			
 		});
@@ -76,11 +74,38 @@ function addProponente() {
 		document.querySelector('#btn_adicionaProp').disabled = false;
 		document.querySelector('#btn_deletaProp').disabled = true;
 	}
+}
 
+function cancelaProponente() {
+	var proponente = parseInt(getValor("#proponente"));
+	var propAtual = proponente - 1;
 
+	if(proponente > 1) {
+		setValor("#proponente", propAtual);
+		Array.prototype.forEach.call(document.querySelectorAll('.tc-div-proponente'), function(el, i){
+			el.style.display = "none";
+		});
+		Array.prototype.some.call(document.querySelectorAll('.tc-div-proponente'), function(el, i){
+			el.style.display = "";
+			return (i+1 === propAtual);
+		});
+	}
+	if(propAtual <= 1) {
+		document.querySelector('#btn_adicionaProp').disabled = false;
+		document.querySelector('#btn_deletaProp').disabled = true;
+	}
+	if(propAtual >= 4) {
+		document.querySelector('#btn_adicionaProp').disabled = true;
+		document.querySelector('#btn_deletaProp').disabled = false;
+	}
+	if(propAtual > 1 && propAtual < 4) {
+		document.querySelector('#btn_adicionaProp').disabled = false;
+		document.querySelector('#btn_deletaProp').disabled = false;
+	}
 }
 
 ajustaProponentes();
 
 // EVENTOS
 document.querySelector(".tc-btnAddProp").addEventListener("click", addProponente);
+document.querySelector(".tc-btnCancelProp").addEventListener("click", cancelaProponente);
