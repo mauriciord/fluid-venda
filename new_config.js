@@ -1,3 +1,11 @@
+// Formulário
+ajustaProponentes();
+ajustaData();
+
+// EVENTOS
+document.querySelector(".tc-btnAddProp").addEventListener("click", addProponente);
+document.querySelector(".tc-btnCancelProp").addEventListener("click", cancelaProponente);
+
 function getValor(el) {
 
 	var elemento = document.querySelector(el);
@@ -104,8 +112,25 @@ function cancelaProponente() {
 	}
 }
 
-ajustaProponentes();
+function ajustaData() {
+	if(getValor('#data') === '')
+		setValor('#data', RetornarDataAtual());
+}
 
-// EVENTOS
-document.querySelector(".tc-btnAddProp").addEventListener("click", addProponente);
-document.querySelector(".tc-btnCancelProp").addEventListener("click", cancelaProponente);
+function RetornarDataAtual() {
+	hoje = new Date();
+	dia = hoje.getDate();
+	mes = hoje.getMonth() + 1; // comeca em zero
+	ano = hoje.getFullYear();
+
+	if (dia < 10)
+			dia = "0" + dia;
+
+	if (mes < 10)
+			mes = "0" + mes;
+
+	if (ano < 2000)
+			ano = "19" + ano;
+
+	return dia + "/" + mes + "/" + ano;
+}
