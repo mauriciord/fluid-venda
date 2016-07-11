@@ -1,4 +1,4 @@
-// Formulário
+// Formulï¿½rio
 ajustaProponentes();
 ajustaData();
 ajustaPagamentoSinal();
@@ -30,6 +30,8 @@ function setValor(el, valor) {
 		elemento.value = valor;
 	} else if( elemento.tagName.toLowerCase == "span" ) {
 		elemento.textContent = valor;
+	} else if( elemento.tagName.toLowerCase() === "select" ) {
+		return elemento.value = valor;
 	}
 
 }
