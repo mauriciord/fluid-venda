@@ -1,4 +1,4 @@
-// Formulï¿½rio
+// Formulário
 ajustaProponentes();
 ajustaData();
 ajustaPagamentoSinal();
