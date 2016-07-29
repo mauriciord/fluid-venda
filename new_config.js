@@ -2,6 +2,7 @@
 ajustaProponentes();
 ajustaData();
 ajustaPagamentoSinal();
+ocultaCamposData();
 
 // EVENTOS
 document.querySelector(".tc-btnAddProp").addEventListener("click", addProponente);
@@ -164,4 +165,10 @@ function ajustaPagamentoSinal() {
 			document.querySelector('#divCheque').style.display = 'none';
 			document.querySelector('#divOutros').style.display = 'none';
 	}
+}
+
+function ocultaCamposData() {
+	document.querySelector('#horas1Exp').style.display = 'none';
+	document.querySelector('#horas2Exp').style.display = 'none';
+	document.querySelector('#horasSinal').style.display = 'none';
 }
