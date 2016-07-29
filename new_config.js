@@ -299,6 +299,20 @@ function FloatToMoeda(num) {
   if (x == 1) ret = ' - ' + ret; return ret;
 
 }
+// #################################################
 
+// FUNÇÕES DE ESCRITA ##############################
+function MostrarExtensoCampo(seletor)	{
 
+	var valorExtenso = getValor(seletor);
+	var campo = seletor.replace("#","").replace(".","");
+
+	if(seletor !== null && valorExtenso === "") {
+		document.querySelector("."+campo+"_Extenso").textContent = "";
+	}else if ( seletor !== null && valorExtenso !== "" && Number(valorExtenso.replace(",",".")) !== 0 ) {
+		var valor = valorExtenso.replace(".","");
+		document.querySelector("."+campo+"_Extenso").textContent = ConvertToWords(valor.replace(",","."));
+	}
+
+}
 // #################################################
