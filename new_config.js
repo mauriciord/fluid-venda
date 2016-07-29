@@ -42,7 +42,7 @@ function ajustaProponentes() {
 	var campoProponente = document.querySelector(selCampoProponente);
 	var valCampoProponente = getValor("#proponente");
 
-	if( valCampoProponente == "" ) {
+	if( valCampoProponente == "" || valCampoProponente == "0" ) {
 		setValor(selCampoProponente, 0);
 		addProponente();
 	}
@@ -63,31 +63,31 @@ function ajustaProponentes() {
 
 function addProponente() {
 	var maxProp = 4;
-	var campoProponente = "#proponente";
-	var proponente = parseInt(getValor(campoProponente)) + 1;
+	var proponente = parseInt(getValor("#proponente"));
+	var propAtual = proponente + 1;
 
-	if( parseInt(getValor(campoProponente)) < maxProp ) {
-		setValor(campoProponente, proponente);
+	if( proponente < maxProp ) {
+		setValor("#proponente", propAtual);
 		Array.prototype.forEach.call(document.querySelectorAll('.tc-div-proponente'), function(el, i) {
 			el.style.display = "none";
 		});		
 		Array.prototype.some.call(document.querySelectorAll('.tc-div-proponente'), function(el, i) {
 			el.style.display = '';
-			return i+1 === proponente;			
+			return i+1 === propAtual;			
 		});
 	}
 
-	if(parseInt(getValor(campoProponente)) == 1) {
+	if(propAtual == 1) {
 		document.querySelector('#btn_adicionaProp').disabled = false;
 		document.querySelector('#btn_deletaProp').disabled = true;
 	}
-	if(parseInt(getValor(campoProponente)) >= maxProp) {
+	if(propAtual >= maxProp) {
 		document.querySelector('#btn_adicionaProp').disabled = true;
 		document.querySelector('#btn_deletaProp').disabled = false;
 	}
-	if(parseInt(getValor(campoProponente)) > 1 && parseInt(getValor(campoProponente)) < maxProp) {
+	if(propAtual > 1 && propAtual < maxProp) {
 		document.querySelector('#btn_adicionaProp').disabled = false;
-		document.querySelector('#btn_deletaProp').disabled = true;
+		document.querySelector('#btn_deletaProp').disabled = false;
 	}
 }
 
