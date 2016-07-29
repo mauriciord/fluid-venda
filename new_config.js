@@ -215,3 +215,90 @@ function stringToInt(idCampo) {
 	return retorno;
 }
 // #################################################
+
+// FUNÇÕES COM NÚMEROS
+aTens = [ "Vinte", "Trinta", "Quarenta", "Cinquenta", "Sessenta", "Setenta", "oitenta", "Noventa"];
+aOnes = [ "Zero", "Um", "Dois", "Três", "Quatro", "Cinco", "Seis", "Sete", "Oito", "Nove", "Dez", "Onze", "Doze", "Treze", "Quatorze", "Quinze", "Dezesseis", "Dezessete", "Dezoito", "Dezenove" ];
+aCent = [ "Cem", "Duzentos", "Trezentos", "Quatrocentos", "Quinhentos", "Seissentos", "Setecentos", "Oitocentos", "Novecentos" ];
+
+function ConvertToHundreds(num) {
+	var cNum, nNum;
+	var cWords = "";
+	num %= 1000;
+	if (num > 99) {
+		/* centenas */
+		cNum = String(num);
+		nNum = Number(cNum.charAt(0));
+		cWords = aCent[nNum-1];
+		if (( (num > 101) || (num == 101) ) && cWords == "Cem")
+			cWords = "Cento";
+		num %= 100;
+		if (num > 0)
+			cWords += " e ";
+	}
+	if (num > 19) {
+		/* Tens. */
+		cNum = String(num);
+		nNum = Number(cNum.charAt(0));
+		cWords += aTens[nNum - 2];
+		num %= 10;
+		if (num > 0)
+			cWords += " e ";
+	}
+	if (num > 0) {
+		/* Ones and teens. */
+		nNum = Math.floor(num);
+		cWords += aOnes[nNum];
+	}
+	return cWords;
+}
+
+function ConvertToWords(num)
+{
+	var aUnits = [ "Mil", "Milhões", "Bilhões", "Trilhões", "Quatrilhões" ];
+	var aUnists2 = [ "Mil", "Milhão", "Bilhão", "Trilhão", "Quatrilhão" ];
+	var cWords = (num >= 1 && num < 2) ? "Real " : "Reais ";
+	var nLeft = Math.floor(num);
+
+	for (var i = 0; nLeft > 0; i++) {
+		if (nLeft % 1000 > 0) {
+			if (i != 0)
+				cWords = ConvertToHundreds(nLeft) + " " + aUnits[i - 1] + " " + cWords;
+			else
+				cWords = ConvertToHundreds(nLeft) + " " + cWords;
+		}
+		nLeft = Math.floor(nLeft / 1000);
+	}
+	num = Math.round(num * 100) % 100;
+	if (num > 0)
+		cWords += " e " + ConvertToHundreds(num) + " Centavos";
+
+	return cWords;
+}
+
+function FloatToMoeda(num) {
+  x = 0;
+
+  if (num < 0) {
+      num = Math.abs(num);
+      x = 1;
+  }
+
+  if (isNaN(num)) num = "0";
+  cents = Math.floor((num * 100 + 0.5) % 100);
+
+  num = Math.floor((num * 100 + 0.5) / 100).toString();
+
+  if (cents < 10) cents = "0" + cents;
+  for (var i = 0; i < Math.floor((num.length - (1 + i)) / 3); i++)
+      num = num.substring(0, num.length - (4 * i + 3)) + '.'
+             + num.substring(num.length - (4 * i + 3));
+
+  ret = num + ',' + cents;
+
+  if (x == 1) ret = ' - ' + ret; return ret;
+
+}
+
+
+// #################################################
