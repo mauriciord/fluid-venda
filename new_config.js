@@ -3,11 +3,13 @@ ajustaProponentes();
 ajustaData();
 ajustaPagamentoSinal();
 ocultaCamposData();
+reajustarIndice();
 
 // EVENTOS
 document.querySelector(".tc-btnAddProp").addEventListener("click", addProponente);
 document.querySelector(".tc-btnCancelProp").addEventListener("click", cancelaProponente);
 document.querySelector("#pagamentoSinal").addEventListener("change", ajustaPagamentoSinal);
+document.querySelector("#indiceReajuste").addEventListener("change", reajustarIndice);
 
 function getValor(el) {
 
@@ -164,6 +166,20 @@ function ajustaPagamentoSinal() {
 			document.querySelector('#divBoleto').style.display = '';
 			document.querySelector('#divCheque').style.display = 'none';
 			document.querySelector('#divOutros').style.display = 'none';
+	}
+}
+
+function reajustarIndice() {
+	var campoIndice = getValor("#indiceReajuste").toLowerCase();
+	var campoIndiceOutros = document.querySelector(".campoIndiceOutros");
+
+	campoIndiceOutros.style.display = 'none';
+
+	if(campoIndice === "outros") {
+		campoIndiceOutros.style.position = 'relative';
+		campoIndiceOutros.style.display = '';
+	} else {
+		campoIndiceOutros.style.display = 'none';
 	}
 }
 
