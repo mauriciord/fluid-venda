@@ -188,3 +188,30 @@ function ocultaCamposData() {
 	document.querySelector('#horas2Exp').style.display = 'none';
 	document.querySelector('#horasSinal').style.display = 'none';
 }
+
+// FUNÇÕES COM STRINGS #############################
+function intToString(valor) {
+    // retorna string valor com underlines (ex.valor: 1, retorno: ___1)
+
+    var strValor = "____" + valor;
+    strValor = strValor.substring(strValor.length - 4, strValor.length);
+
+    return strValor;
+}
+// retorna inteiro da sequencia do campo (ex. idCampo: campo___1, retorno: 1)
+function stringToInt(idCampo) {
+
+	var retorno = 0;
+	var aux = "";
+
+	if (idCampo.length > 4) {
+		aux = idCampo.substring(idCampo.length - 4, idCampo.length);
+		aux = aux.replace(/_/g, ""); // substitui todos _ (underline)
+		retorno = parseInt(aux);
+		if (isNaN(retorno))
+			retorno = 0;
+	}
+
+	return retorno;
+}
+// #################################################
