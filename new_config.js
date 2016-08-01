@@ -4,6 +4,7 @@ ajustaData();
 ajustaPagamentoSinal();
 ocultaCamposData();
 reajustarIndice();
+calculaPreencheValores();
 
 // EVENTOS
 document.querySelector(".tc-btnAddProp").addEventListener("click", addProponente);
@@ -14,13 +15,13 @@ document.querySelector("#indiceReajuste").addEventListener("change", reajustarIn
 function getValor(el) {
 
 	var elemento = document.querySelector(el);
+	var elementoTag = elemento !== null ? elemento.tagName.toLowerCase() : "";
 
-	if( elemento.tagName.toLowerCase() === "input" ) {
-		return elemento.value;
-	} else if( elemento.tagName.toLowerCase() === "span" ) {
-		return elemento.textContent;
-	} else if( elemento.tagName.toLowerCase() === "select" ) {
-		return elemento.options[elemento.selectedIndex].value;
+	switch(elementoTag) {
+		case "input": return elemento.value;
+		case "span": return elemento.textContent;
+		case "select": return elemento.options[elemento.selectedIndex].value;
+		default: return "";
 	}
 
 }
@@ -28,13 +29,20 @@ function getValor(el) {
 function setValor(el, valor) {
 
 	var elemento = document.querySelector(el);
+	var elementoTag = elemento !== null ? elemento.tagName.toLowerCase() : "";
 
-	if( elemento.tagName.toLowerCase() == "input" ) {
-		elemento.value = valor;
-	} else if( elemento.tagName.toLowerCase == "span" ) {
-		elemento.textContent = valor;
-	} else if( elemento.tagName.toLowerCase() === "select" ) {
-		return elemento.value = valor;
+	switch(elementoTag) {
+		case "input":
+			elemento.value = valor;
+			break;
+		case "span":
+			elemento.textContent = valor;
+			break;
+		case "select":
+			elemento.value = valor;
+			break;
+		default:
+			elemento.value = valor;
 	}
 
 }
@@ -304,14 +312,161 @@ function FloatToMoeda(num) {
 // FUNÇÕES DE ESCRITA ##############################
 function MostrarExtensoCampo(seletor)	{
 
-	var valorExtenso = getValor(seletor);
 	var campo = seletor.replace("#","").replace(".","");
+	var elemento = document.querySelector("#"+campo);
+	var valorExtenso = getValor("#"+campo);
 
-	if(seletor !== null && valorExtenso === "") {
-		document.querySelector("."+campo+"_Extenso").textContent = "";
-	}else if ( seletor !== null && valorExtenso !== "" && Number(valorExtenso.replace(",",".")) !== 0 ) {
-		var valor = valorExtenso.replace(".","");
-		document.querySelector("."+campo+"_Extenso").textContent = ConvertToWords(valor.replace(",","."));
+	if(elemento !== null && valorExtenso === "") {
+		setValor("."+campo+"_Extenso", "");
+	}else if ( elemento !== null && valorExtenso !== "" && Number(valorExtenso.replace(".","").replace(",",".")) !== 0 ) {
+		var valor = valorExtenso.replace(".","").replace(",",".");
+		setValor("."+campo+"_Extenso", ConvertToWords(valor));
+	}
+
+}
+// #################################################
+
+// CALCULA E PREENCHE OS VALORES DA NEGOCIAÇÃO #####
+function calculaPreencheValores() {
+	
+	var somaValorSinal = function() {
+		var seletores = "";
+		var _seletores = "";
+		var valPagamentoSinal = getValor("#pagamentoSinal").toLowerCase();
+
+		switch(valPagamentoSinal) {
+			case "cheque":
+				seletores = "[id^=valorCheque___]";
+				_seletores = "[id^=_valorCheque___]";
+				break;
+			case "outros":
+				seletores = "[id^=valorOutros___]";
+				_seletores = "[id^=_valorOutros___]";
+				break;
+			default:
+				seletores = "[id^=valorBoleto___]";
+				_seletores = "[id^=_valorBoleto___]";
+		}
+
+		var _camposVlSinal = document.querySelectorAll(_seletores);
+		var camposVlSinal = document.querySelectorAll(seletores);
+		var resultadoVlSinal = 0;
+
+		if( _camposVlSinal.length ) {
+			_camposVlSinal.forEach(function(el, i) { 
+				var campoValorSinal = el.value;
+				if( campoValorSinal == "" || campoValorSinal == "&nbsp;" ) {
+					resultadoVlSinal += 0; 
+				} else {
+					var subCampoValorSinal = campoValorSinal.replace(".", "").replace(",", ".");
+					resultadoVlSinal += Number(subCampoValorSinal);
+				}
+			});
+		}
+
+		if( camposVlSinal.length ) {
+			camposVlSinal.forEach(function(el, i) {
+				var campoValorRef = getValor(el.id);
+				if( campoValorRef == "" || campoValorRef == "&nbsp;" || el.type === 'hidden' ) {
+					resultadoVlSinal += 0;
+				} else {
+					var subCampoValorRef = campoValorRef.replace(".", "").replace(",", ".");
+					resultadoVlSinal += Number(subCampoValorRef);
+				}
+			});
+		}
+
+		return resultadoVlSinal;
+	};
+
+	var somaValorSaldo = function() {
+		var resultadoValorSaldo = 0;
+		var _seletorVlSinal = document.querySelectorAll("[id^=_quantidadeParcelas___]");
+		var seletorVlSinal = document.querySelectorAll("[id^=quantidadeParcelas___]");
+
+		if( _seletorVlSinal.length ) {
+			_seletorVlSinal.forEach(function(el, i) {
+				if(el.value === ""|| el.value == "&nbsp;" ) {
+					resultadoValorSaldo += 0;
+				} else {
+					var valorParcela = getValor("#_valorParcela" + intToString(stringToInt(el.id)));
+					var subValorParcela = valorParcela.replace(".", "").replace(",", ".");
+					resultadoValorSaldo += Number(el.value) * Number(subValorParcela);
+				}
+			});
+		}
+
+		if( seletorVlSinal.length ) {
+			seletorVlSinal.forEach(function(el, i) {
+				var campoQtdeParc = getValor(el.id);
+				var elValorParcela = "#valorParcela" + intToString(stringToInt(el.id));				
+
+				if( campoQtdeParc === "" || campoQtdeParc === "&nbsp;" || document.querySelector(elValorParcela).type === 'hidden' ) {
+					resultadoValorSaldo += 0;
+				} else {
+					var valorDaParc = getValor(elValorParcela);
+					var subValorDaParc = valorDaParc.replace(".", "").replace(",", ".");
+					resultadoValorSaldo += Number(campoQtdeParc) * Number(subValorDaParc);					
+				}
+
+			});
+		}
+
+		return resultadoValorSaldo;
+	}
+
+	var resultadoVlSaldo = somaValorSaldo();
+	var resultadoVlSinal = somaValorSinal();
+	console.log(resultadoVlSaldo);
+	console.log(resultadoVlSinal);
+
+	// SALDO
+	var _campoVlSaldo = document.querySelector("#_valorSaldo");
+	var campoVlSaldo = document.querySelector("#valorSaldo");
+
+	if(_campoVlSaldo !== null) {
+		console.log("1 if - vl saldo");
+		_campoVlSaldo.value = FloatToMoeda(resultadoVlSaldo);
+		MostrarExtensoCampo("#valorSaldo");
+	}
+
+	if(campoVlSaldo !== null && campoVlSaldo.type !== 'hidden') {
+		console.log("2 if - vl saldo");
+		setValor("#valorSaldo", FloatToMoeda(resultadoVlSaldo));
+		MostrarExtensoCampo("#valorSaldo");
+	}
+
+	// SINAL
+	var _inputVlSinal = document.querySelector("#_valorSinal");
+	var inputVlSinal = document.querySelector("#valorSinal");
+
+	if(_inputVlSinal !== null) {
+		console.log("1 if - vl sinal");
+		_inputVlSinal.value = FloatToMoeda(resultadoVlSinal);
+		MostrarExtensoCampo("#valorSinal");
+	}
+
+	if(inputVlSinal !== null && inputVlSinal.type !== 'hidden') {
+		console.log("2 if - vl sinal");
+		setValor("#valorSinal", FloatToMoeda(resultadoVlSinal));
+		MostrarExtensoCampo("#valorSinal");
+	}
+
+	// TOTAL
+	var somaValorTotal = resultadoVlSinal + resultadoVlSaldo;
+	var _inputVlTotal = document.querySelector("#_valorTotal");
+	var inputVlTotal = document.querySelector("#valorTotal");
+
+	if(_inputVlTotal !== null) {
+		console.log("1 if - vl total");
+		_inputVlTotal.value = FloatToMoeda(somaValorTotal);
+		MostrarExtensoCampo("#valorTotal");
+	}
+
+	if(inputVlTotal !== null && inputVlTotal.type !== 'hidden') {
+		console.log("2 if - vl total");
+		setValor("#valorTotal", FloatToMoeda(somaValorTotal));
+		MostrarExtensoCampo("#valorTotal");
 	}
 
 }
