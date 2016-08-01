@@ -192,9 +192,24 @@ function reajustarIndice() {
 }
 
 function ocultaCamposData() {
-	document.querySelector('#horas1Exp').style.display = 'none';
-	document.querySelector('#horas2Exp').style.display = 'none';
-	document.querySelector('#horasSinal').style.display = 'none';
+	var horas1Exp = document.querySelector('#horas1Exp');
+	var exe1Exp = document.querySelector('#exe1Exp');
+	var horas2Exp = document.querySelector('#horas2Exp');
+	var exe2Exp = document.querySelector('#exe2Exp');
+	var horasSinal = document.querySelector('#horasSinal');
+	var exeSinal = document.querySelector('#exeSinal');
+	
+	if(exe1Exp.value !== "true") {
+		horas1Exp.style.display = 'none';
+	}
+
+	if(exe2Exp.value !== "true") {
+		horas2Exp.style.display = 'none';
+	}
+
+	if(exeSinal.value !== "true") {
+		horasSinal.style.display = 'none';
+	}
 }
 
 // FUNÇÕES COM STRINGS #############################
@@ -471,3 +486,4 @@ function calculaPreencheValores() {
 
 }
 // #################################################
+
