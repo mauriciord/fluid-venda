@@ -440,13 +440,11 @@ function calculaPreencheValores() {
 	var campoVlSaldo = document.querySelector("#valorSaldo");
 
 	if(_campoVlSaldo !== null) {
-		console.log("1 if - vl saldo");
 		_campoVlSaldo.value = FloatToMoeda(resultadoVlSaldo);
 		MostrarExtensoCampo("#valorSaldo");
 	}
 
 	if(campoVlSaldo !== null && campoVlSaldo.type !== 'hidden') {
-		console.log("2 if - vl saldo");
 		setValor("#valorSaldo", FloatToMoeda(resultadoVlSaldo));
 		MostrarExtensoCampo("#valorSaldo");
 	}
@@ -456,13 +454,11 @@ function calculaPreencheValores() {
 	var inputVlSinal = document.querySelector("#valorSinal");
 
 	if(_inputVlSinal !== null) {
-		console.log("1 if - vl sinal");
 		_inputVlSinal.value = FloatToMoeda(resultadoVlSinal);
 		MostrarExtensoCampo("#valorSinal");
 	}
 
 	if(inputVlSinal !== null && inputVlSinal.type !== 'hidden') {
-		console.log("2 if - vl sinal");
 		setValor("#valorSinal", FloatToMoeda(resultadoVlSinal));
 		MostrarExtensoCampo("#valorSinal");
 	}
@@ -473,13 +469,11 @@ function calculaPreencheValores() {
 	var inputVlTotal = document.querySelector("#valorTotal");
 
 	if(_inputVlTotal !== null) {
-		console.log("1 if - vl total");
 		_inputVlTotal.value = FloatToMoeda(somaValorTotal);
 		MostrarExtensoCampo("#valorTotal");
 	}
 
 	if(inputVlTotal !== null && inputVlTotal.type !== 'hidden') {
-		console.log("2 if - vl total");
 		setValor("#valorTotal", FloatToMoeda(somaValorTotal));
 		MostrarExtensoCampo("#valorTotal");
 	}
