@@ -5,16 +5,23 @@ ajustaPagamentoSinal();
 ocultaCamposData();
 reajustarIndice();
 calculaPreencheValores();
+escreveParcelas();
 
 // EVENTOS
 document.querySelector(".tc-btnAddProp").addEventListener("click", addProponente);
 document.querySelector(".tc-btnCancelProp").addEventListener("click", cancelaProponente);
 document.querySelector("#pagamentoSinal").addEventListener("change", ajustaPagamentoSinal);
 document.querySelector("#indiceReajuste").addEventListener("change", reajustarIndice);
+document.querySelectorAll(".valorParcela").forEach(function(el, i) {
+	el.addEventListener("blur", function(el, i){
+		CalcularSaldo(this);
+  	MostrarExtensoCampoParcela(this.name);
+	});
+});
 
 function getValor(el) {
 
-	var elemento = document.querySelector(el);
+	var elemento = el.tagName ? el : document.querySelector(el);
 	var elementoTag = elemento !== null ? elemento.tagName.toLowerCase() : "";
 
 	switch(elementoTag) {
@@ -339,6 +346,37 @@ function MostrarExtensoCampo(seletor)	{
 	}
 
 }
+
+function MostrarExtensoCampoParcela(seletor)	{
+
+	var campo = seletor.replace("#","").replace(".","");
+	var elemento = document.querySelector("#"+campo);
+	var valorExtenso = getValor("#"+campo);
+
+	if(elemento !== null && valorExtenso === "") {
+		setValor("."+campo+"_Extenso", "");
+	}else if ( elemento !== null && valorExtenso !== "" && Number(valorExtenso.replace(".","").replace(",",".")) !== 0 ) {
+		var valor = valorExtenso.replace(".","").replace(",",".");
+		setValor("."+campo+"_Extenso", ConvertToWords(valor));
+	}
+
+}
+
+function escreveParcelas() {
+
+	var campoVlParcela = document.querySelectorAll('.valorParcela');
+	campoVlParcela.forEach(function(el, i) {
+		var vlExtenso = getValor(el);
+		var valorExt = vlExtenso.replace(".","");
+
+		var campoTr = closest(el, function(proximo) {
+			return proximo.tagName.toLowerCase() === "tr"
+		});
+
+		campoTr.querySelector('.Extenso_valorParcela').textContent = ConvertToWords(valorExt.replace(",","."));
+	});
+
+}
 // #################################################
 
 // CALCULA E PREENCHE OS VALORES DA NEGOCIAÇÃO #####
@@ -480,4 +518,12 @@ function calculaPreencheValores() {
 
 }
 // #################################################
+
+// substituir o Closest() do jQuery
+function closest(el, fn) {
+    return el && (
+        fn(el) ? el : closest(el.parentNode, fn)
+    );
+}
+// ################################################
 
