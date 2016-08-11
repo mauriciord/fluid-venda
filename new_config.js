@@ -4,6 +4,7 @@ ajustaData();
 ajustaPagamentoSinal();
 ocultaCamposData();
 reajustarIndice();
+//setInterval(calculaPreencheValores, 10000);
 calculaPreencheValores();
 escreveParcelas();
 
@@ -13,11 +14,77 @@ document.querySelector(".tc-btnCancelProp").addEventListener("click", cancelaPro
 document.querySelector("#pagamentoSinal").addEventListener("change", ajustaPagamentoSinal);
 document.querySelector("#indiceReajuste").addEventListener("change", reajustarIndice);
 document.querySelectorAll(".valorParcela").forEach(function(el, i) {
-	el.addEventListener("blur", function(el, i){
-		CalcularSaldo(this);
-  	MostrarExtensoCampoParcela(this.name);
-	});
+	el.addEventListener("blur", blurValorParcela(el, i));
 });
+
+var imaxPS = 1; // qtde de registros de pagamento do sinal
+
+function blurValorParcela(elemento, indice) {
+	console.log("blur na " + elemento.id + " -> " + elemento.name);
+  MostrarExtensoCampoParcela(elemento.name);
+}
+
+function FormatarValor(campo, separadorMilhar, separadorDecimal, evento, tamanhoMax) {
+
+	if (!handleEnter(campo, evento))
+		return;
+
+    if (campo.readOnly)
+        return false;
+
+    var sep = 0;
+    var key = '';
+    var i = j = 0;
+    var len = len2 = 0;
+    var strCheck = '0123456789';
+    var aux = aux2 = '';
+    var whichCode = (window.Event) ? evento.which : evento.keyCode;
+
+    if (whichCode == 13)
+        return true;
+
+    key = String.fromCharCode(whichCode);  // Valor para o c?igo da Chave
+    if (strCheck.indexOf(key) == -1)
+        return false;  // Chave inv?ida
+
+    len = campo.value.length;
+    if (len >= tamanhoMax)
+        return false;
+
+    for (i = 0; i < len; i++)
+        if ((campo.value.charAt(i) != '0') && (campo.value.charAt(i) != separadorDecimal))
+            break;
+    aux = '';
+    for (; i < len; i++)
+        if (strCheck.indexOf(campo.value.charAt(i)) != -1)
+            aux += campo.value.charAt(i);
+
+    aux += key;
+    len = aux.length;
+    if (len == 0)
+        campo.value = '';
+    if (len == 1)
+        campo.value = '0' + separadorDecimal + '0' + aux;
+    if (len == 2)
+        campo.value = '0' + separadorDecimal + aux;
+    if (len > 2) {
+        aux2 = '';
+        for (j = 0, i = len - 3; i >= 0; i--) {
+            if (j == 3) {
+                aux2 += separadorMilhar;
+                j = 0;
+            }
+            aux2 += aux.charAt(i);
+            j++;
+        }
+        campo.value = '';
+        len2 = aux2.length;
+        for (i = len2 - 1; i >= 0; i--)
+            campo.value += aux2.charAt(i);
+        campo.value += separadorDecimal + aux.substr(len - 2, len);
+    }
+    return false;
+}
 
 function getValor(el) {
 
@@ -354,10 +421,10 @@ function MostrarExtensoCampoParcela(seletor)	{
 	var valorExtenso = getValor("#"+campo);
 
 	if(elemento !== null && valorExtenso === "") {
-		setValor("."+campo+"_Extenso", "");
+		document.querySelector("#Extenso_"+campo).textContent = "";
 	}else if ( elemento !== null && valorExtenso !== "" && Number(valorExtenso.replace(".","").replace(",",".")) !== 0 ) {
 		var valor = valorExtenso.replace(".","").replace(",",".");
-		setValor("."+campo+"_Extenso", ConvertToWords(valor));
+		document.querySelector("#Extenso_"+campo).textContent = ConvertToWords(valor.replace(",","."));
 	}
 
 }
@@ -470,8 +537,8 @@ function calculaPreencheValores() {
 
 	var resultadoVlSaldo = somaValorSaldo();
 	var resultadoVlSinal = somaValorSinal();
-	console.log(resultadoVlSaldo);
-	console.log(resultadoVlSinal);
+	//console.log(resultadoVlSaldo);
+	//console.log(resultadoVlSinal);
 
 	// SALDO
 	var _campoVlSaldo = document.querySelector("#_valorSaldo");
