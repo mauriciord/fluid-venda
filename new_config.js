@@ -14,12 +14,15 @@ document.querySelector(".tc-btnCancelProp").addEventListener("click", cancelaPro
 document.querySelector("#pagamentoSinal").addEventListener("change", ajustaPagamentoSinal);
 document.querySelector("#indiceReajuste").addEventListener("change", reajustarIndice);
 document.querySelectorAll(".valorParcela").forEach(function(el, i) {
-	el.addEventListener("blur", blurValorParcela(el, i));
+	el.addEventListener("blur", function(evt) { 
+		blurValorParcela(el, i, evt);
+		FormatarValor(el,'.',',',evt,14);
+	});
 });
 
 var imaxPS = 1; // qtde de registros de pagamento do sinal
 
-function blurValorParcela(elemento, indice) {
+function blurValorParcela(elemento, indice, evento) {
 	console.log("blur na " + elemento.id + " -> " + elemento.name);
   MostrarExtensoCampoParcela(elemento.name);
 }
@@ -84,6 +87,26 @@ function FormatarValor(campo, separadorMilhar, separadorDecimal, evento, tamanho
         campo.value += separadorDecimal + aux.substr(len - 2, len);
     }
     return false;
+}
+
+function handleEnter (field, event) {
+
+	var code = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
+	if (code == 13) {
+
+		/*if ( !ValidarCampo(field, event) )
+			return true;*/
+
+		var i;
+		for (i = 0; i < field.form.elements.length; i++)
+			if (field == field.form.elements[i])
+				break;
+
+		i = (i + 1) % field.form.elements.length;
+		field.form.elements[i].focus();
+	}
+	else
+		return true;
 }
 
 function getValor(el) {
