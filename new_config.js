@@ -5,7 +5,7 @@ ajustaPagamentoSinal();
 ocultaCamposData();
 reajustarIndice();
 //setInterval(calculaPreencheValores, 10000);
-calculaPreencheValores();
+//calculaPreencheValores();
 escreveParcelas();
 
 // EVENTOS
@@ -13,16 +13,29 @@ document.querySelector(".tc-btnAddProp").addEventListener("click", addProponente
 document.querySelector(".tc-btnCancelProp").addEventListener("click", cancelaProponente);
 document.querySelector("#pagamentoSinal").addEventListener("change", ajustaPagamentoSinal);
 document.querySelector("#indiceReajuste").addEventListener("change", reajustarIndice);
-document.querySelectorAll(".valorParcela").forEach(function(el, i) {
-	el.addEventListener("blur", function(evt) { 
-		blurValorParcela(el, i, evt);
-		FormatarValor(el,'.',',',evt,14);
+/*document.querySelectorAll(".valorParcela").forEach(function(el, i) {
+	el.addEventListener("blur", function() { 
+		//blurValorParcela(el, i);
+  	//calculaPreencheValores();
 	});
+});*/
+/*document.querySelectorAll(".valorParcela").forEach(function(el, i) {
+	el.addEventListener("keypress", function(evt) {
+		//console.log(el);
+		//console.log(i);
+		FormatarValor(this,'.',',', evt, 14);
+	});
+});*/
+document.querySelector(".valorParcela").addEventListener("keypress", function(evt) {
+	//console.log(el);
+	console.log(evt.target.value);
+	calculaPreencheValores();
+	return (FormatarValor(this,'.',',', evt, 14));
 });
 
 var imaxPS = 1; // qtde de registros de pagamento do sinal
 
-function blurValorParcela(elemento, indice, evento) {
+function blurValorParcela(elemento, indice) {
 	console.log("blur na " + elemento.id + " -> " + elemento.name);
   MostrarExtensoCampoParcela(elemento.name);
 }
@@ -54,13 +67,16 @@ function FormatarValor(campo, separadorMilhar, separadorDecimal, evento, tamanho
     if (len >= tamanhoMax)
         return false;
 
-    for (i = 0; i < len; i++)
-        if ((campo.value.charAt(i) != '0') && (campo.value.charAt(i) != separadorDecimal))
+    for (i = 0; i < len; i++) {
+    	if ((campo.value.charAt(i) != '0') && (campo.value.charAt(i) != separadorDecimal))
             break;
+    }
+        
     aux = '';
-    for (; i < len; i++)
-        if (strCheck.indexOf(campo.value.charAt(i)) != -1)
+    for (i ; i < len; i++) {
+    	if (strCheck.indexOf(campo.value.charAt(i)) != -1)
             aux += campo.value.charAt(i);
+    }       
 
     aux += key;
     len = aux.length;
